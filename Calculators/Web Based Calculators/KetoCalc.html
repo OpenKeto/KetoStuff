@@ -1,0 +1,284 @@
+<html lang="en">
+<head>
+<style>
+form {
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 180px;
+  text-align: right;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 20px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+</style>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function write_results(){
+		// Set up the paragraphs for the calculated results
+		var outResults_parra = document.getElementById('results');
+		var outMacros_parra = document.getElementById('DietaryMacros');
+		var fasting_parra = document.getElementById('FastingResults');
+		var gainz_parra = document.getElementById('Gainz');
+		// Grab the elements that the user filled into variables
+		var userAge = document.getElementById('age').value;
+		var heightInches = document.getElementById('height').value;
+		var heightCM = document.getElementById('height').value * 2.54;
+		var startingWeightLbs = document.getElementById('weight').value;
+		var startingWeightKG = startingWeightLbs/2.2;
+		var neckInches = document.getElementById('neck').value;
+		var waistInches = document.getElementById('waist').value;
+		var hipsInches = document.getElementById('hips').value;
+		var wristInches = document.getElementById('wrist').value;
+		var ankleInches = document.getElementById('ankle').value;
+		// Calculate BMR based in the values entered into the form
+		var bmrMale = 66.0+(13.7*startingWeightKG)+(5.0*heightCM)-(6.8*userAge);
+		var bmrFemale = 655+(9.6*startingWeightKG)+(1.8*heightCM)-(4.7*userAge);
+		// Initialize variables selected by activity level on the form
+		var TDEEMale = 0.0;
+		var TDEEFemale = 0.0;
+		var proteinNeed = 0.0;
+		if ( document.KetoCalc.actLevel[0].checked )
+		{
+			TDEEMale = bmrMale * 1.2;
+			TDEEFemale = bmrFemale * 1.2;
+			proteinNeed = 0.69;
+		}
+		if ( document.KetoCalc.actLevel[1].checked )
+		{
+			TDEEMale = bmrMale * 1.375;
+			TDEEFemale = bmrFemale * 1.375;
+			proteinNeed = 0.80;
+		}
+		if ( document.KetoCalc.actLevel[2].checked )
+		{
+			TDEEMale = bmrMale * 1.55;
+			TDEEFemale = bmrFemale * 1.55;
+			proteinNeed = 0.90;
+		}
+		if ( document.KetoCalc.actLevel[3].checked )
+		{
+			TDEEMale = bmrMale * 1.725;
+			TDEEFemale = bmrFemale * 1.725;
+			proteinNeed = 1.00;
+		}
+		if ( document.KetoCalc.actLevel[4].checked )
+		{
+			TDEEMale = bmrMale * 1.9;
+			TDEEFemale = bmrFemale * 1.9;
+			proteinNeed = 1.2;
+		}
+		// Calculate the body fat percentage
+		var TDEE = 0.0;
+		var BMRSelected = 0.0;
+		var currentBodyFatPercentCalculated = 0.0;
+		if ( document.KetoCalc.gender[0].checked )	// males
+		{
+			TDEE = TDEEMale;
+			BMRSelected = bmrMale;
+			currentBodyFatPercentCalculated = ((86.01*(Math.log10(waistInches-neckInches)))-(70.041*(Math.log10(heightInches)))+37.76);
+		}
+		else		// females
+		{
+			TDEE = TDEEFemale;
+			BMRSelected = bmrFemale;
+			currentBodyFatPercentCalculated = ((163.205*(Math.log10(hipsInches+waistInches-neckInches)))-(97.684*(Math.log10(heightInches)))-78.387);
+		}
+		// Calculate the body fat in lbs, goal weight, and the lean body mass
+		var currentBodyFatLbs = (currentBodyFatPercentCalculated/100.0) * startingWeightLbs;
+		var goalBodyFatPct = parseFloat(document.getElementById('BodyFat').value)/100.0;
+		var goalWeight = ((startingWeightLbs - currentBodyFatLbs) * (1.0 + goalBodyFatPct));
+		var LBMLbs = startingWeightLbs - currentBodyFatLbs;
+		var fastingCaloriesAvailableFromFat = currentBodyFatLbs * 31;
+		outResults_parra.innerHTML = "Your Goal Weight: <b>";
+		outResults_parra.innerHTML += goalWeight.toFixed(1) + "</b>";
+		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += "Your Lbs from Goal Weight at start: " + (startingWeightLbs-goalWeight).toFixed(1);
+		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += "Your Body Fat at start: " + currentBodyFatPercentCalculated.toFixed(1);
+		outResults_parra.innerHTML += "%, ";
+		outResults_parra.innerHTML += currentBodyFatLbs.toFixed(1);
+		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += "* <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Lean_body_mass\">Lean Body Mass (LBM)</a>: " + LBMLbs.toFixed(1);
+		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Basal_metabolic_rate\">Basal Metabolic Rate (BMR)</a>: " + BMRSelected.toFixed(1);
+		outResults_parra.innerHTML += " cal/day<br/>";
+		outResults_parra.innerHTML += " Initial <a target=\"_blank\" href=\"https://tdeecalculator.net/\">Total Daily Energy Expenditure (TDEE)</a>: " + Math.round(TDEE);
+		outResults_parra.innerHTML += " cal/day<br/>";
+		outResults_parra.innerHTML += "** Initial Maximum Fat Loss on Protein Sparing Modified Fast: " + (fastingCaloriesAvailableFromFat/3500).toFixed(2);
+		outResults_parra.innerHTML += " lbs of body fat per day";
+
+		// Calculate the dietary macros
+		var proteinGrams = proteinNeed * LBMLbs;
+		var proteinCals = proteinGrams * 4.0;
+		var maxFatMobilizationCals = currentBodyFatLbs * 31;
+		var netFatCals = TDEE - proteinCals - maxFatMobilizationCals - 80.0;
+		outMacros_parra.innerHTML = "* Protein: " + proteinGrams.toFixed(1);
+		outMacros_parra.innerHTML += " g (" + proteinCals.toFixed(1);
+		outMacros_parra.innerHTML += " cals)<br/>";
+		outMacros_parra.innerHTML += "** Carbs: 20 g (80 cals)<br/>"
+		outMacros_parra.innerHTML += "*** Fat: " + (netFatCals/9.0).toFixed(1);
+		outMacros_parra.innerHTML += " g (";
+		outMacros_parra.innerHTML += netFatCals.toFixed(1);
+		outMacros_parra.innerHTML += " cals)<br/>";
+		outMacros_parra.innerHTML += "Your total Dietary Calories are ";
+		outMacros_parra.innerHTML += (proteinCals+80+netFatCals).toFixed(1);
+		outMacros_parra.innerHTML += " cals<br><br>";
+		outMacros_parra.innerHTML += "If you consume " + Math.round((netFatCals+fastingCaloriesAvailableFromFat)/9.0);
+		outMacros_parra.innerHTML += " g of fat you will stay at your current weight.<br>";
+		
+		fasting_parra.innerHTML = "You currently use " + Math.round(TDEE);
+		fasting_parra.innerHTML += " cal/day. ";
+		fasting_parra.innerHTML += "You have " + Math.round(fastingCaloriesAvailableFromFat);
+		fasting_parra.innerHTML += " calories per day available from your body fat.<br/>";
+		if (fastingCaloriesAvailableFromFat >= TDEE)
+		{
+			fasting_parra.innerHTML += "You have more calories available from body fat than your daily requirements and may be able to fast.";
+		}
+		else
+		{
+			fasting_parra.innerHTML += "You have less calories available from body fat than your daily requirements and may not be able to fast.<br/>";
+			fasting_parra.innerHTML += "If you fast, your body may drop your base metabolism, energy expenditures or may consume protein stores.<br/>";
+			fasting_parra.innerHTML += "You will be " + Math.round(fastingCaloriesAvailableFromFat - TDEE);
+			fasting_parra.innerHTML += " calories short per day<br/><br/>";
+			fasting_parra.innerHTML += "The thermic effect of food contributes somewhere from 5-20% of your current TDEE number so if you are fasting that can reduce your TDEE<br>";
+			fasting_parra.innerHTML += "Reducing your TDEE by 10% would result in you using " + Math.round(TDEE*0.9);
+			fasting_parra.innerHTML += " calories per day.<br/><br/>";
+			if (fastingCaloriesAvailableFromFat > TDEE*0.9)
+			{
+				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food puts you in the range for fasting.<br>"
+			}
+			else
+			{
+				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food still leaves you in a caloric deficit during fasting.<br>"
+				fasting_parra.innerHTML += "The Protein Sparing Modified fast solves this issue by providing the calories needed for the deficit.<br>"
+			}
+		}
+		gainz_parra.innerHTML = "The maximum Lean Body Mas that you can carry on your frame is ";
+		gainz_parra.innerHTML += Math.round((exp(heightInches,1.5))*(exp(wristInches,0.5)/22.667)+((exp(ankleInches,0.5)/17.0104)*(goalBodyFatPct/2.24)+1));
+		gainz_parra.innerHTML += "lbs";
+		
+	}
+	</script>
+</head>
+<body>
+<h1>KetoCalc - Ketogenic Protein (Lean Body Mass) Sparing Dietary Calculator</h1>
+<h2>Enter Your Numbers</h2>
+<form Name="KetoCalc">
+    <div>
+        <label for="Age">Age:</label>
+        <input type="text" id="age" name="user_age" value="57" maxlength="6" autofocus>
+    </div>
+	<div>
+		<input type="radio" name="gender" value="male" checked> Male<br>
+		<input type="radio" name="gender" value="female"> Female
+    </div>
+	<div>
+        <label for="Height">Height :</label>
+        <input type="text" id="height" name="user_height" value="70"> inches
+    </div>
+    <div>
+        <label for="Weight">Weight :</label>
+        <input type="text" id="weight" name="user_weight" value="200"> lbs
+    </div>
+    <div>
+        <label for="Neck">Neck :</label>
+        <input type="text" id="neck" name="user_neck" value="16"> inches
+    </div>
+    <div>
+        <label for="Waist">Waist :</label>
+        <input type="text" id="waist" name="user_waist" value="40"> inches
+    </div>
+    <div>
+        <label for="Ankle">Ankle :</label>
+        <input type="text" id="ankle" name="user_ankle" value="10"> inches
+    </div>
+    <div>
+        <label for="Wrist">Wrist :</label>
+        <input type="text" id="wrist" name="user_wrist" value="7"> inches
+    </div>
+    <div>
+        <label for="Hips">Hips (females) :</label>
+        <input type="text"id="hips" name="user_hips" value="44"> inches
+    </div>
+	<div>
+	Select your <a target=\"_blank\" href="https://ketogains.com/ketogains-calculator/" >Activity Level</a><br/>
+		<input type="radio" name="actLevel" value="Sedentary" checked> Sedentary<br>
+		<input type="radio" name="actLevel" value="LightlyActive"> Lightly Active<br>
+		<input type="radio" name="actLevel" value="ModeratelyActive"> Moderately Active<br>
+		<input type="radio" name="actLevel" value="VeryActive"> Very Active<br>
+		<input type="radio" name="actLevel" value="ExtremelyActive"> Extremely Active
+    </div>
+	Enter Your <a href="https://ketogains.com/2015/09/how-to-estimate-your-body-fat-percentage-bf/">Goal Body Fat</a>
+    <div>
+        <label for="Body Fat">Body Fat (%):</label>
+        <input type="text" id="BodyFat" name="user_bodyfat" value="15">
+    </div>
+<div class="button">
+  <input type="button" value="Calculate" onclick="write_results();"/>
+</div>
+</form>
+<i>Scroll down for results after pressing Calculate</i><p/>
+<h2>Your Scale and Metabolism Numbers</h2>
+<font="Courier New"><p id="results"></p></font>
+* This method attempts to conserve Lean Body Mass by leaving the dietary protein constant throughout.<br/>
+** For the limit on how much fat you can draw from your body per day, see: 
+<a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0022519304004175">A limit on the energy transfer rate from the human fat store in hypophagia</a>.<br/>
+<h2>Your Dietary Macros (per day)</h2>
+<font="Courier New"><p id="DietaryMacros"></p></font>
+* The protein number is based on <a target="_blank" href="http://www.ketogains.com">KetoGains</a> protein macros.<br>
+** The carb number is based on <a target="_blank" href="https://sa.atkins.com/why-atkins/the-phases/phase-1-induction/">Atkins Induction</a> 
+or <a target="_blank" href="https://www.dietdoctor.com/low-carb/keto">ketogenic dietary levels</a> to guarantee ketosis.<br>
+*** The fat number is determined based on the fastest possible fat loss.
+This amount of fat in your diet frees up the maximum amount of fat from your body because it does not allow your metabolism to drop.<br>
+<h2>Can You Fast?</h2>
+An important question to ask when considering extended fasting is whether or not you have sufficient body fat to fast. 
+<font="Courier New"><p id="FastingResults"></p></font>
+<h2>How Much Muscle Can You Gain?</h2>
+<font="Courier New"><p id="Gainz"></p></font>
+<h2>Disclaimer</h2>
+Use this information at your own risk and with the advice of your medical professional. 
+We are not doctors nor do we pretend to be one on the Internet.
+</body>
+</html>
