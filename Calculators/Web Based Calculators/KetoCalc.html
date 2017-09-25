@@ -132,21 +132,22 @@ button {
 		var goalWeight = ((startingWeightLbs - currentBodyFatLbs) * (1.0 + goalBodyFatPct));
 		var LBMLbs = startingWeightLbs - currentBodyFatLbs;
 		var fastingCaloriesAvailableFromFat = currentBodyFatLbs * 31;
+		// Form the output string for the results
 		outResults_parra.innerHTML = "Current Weight: <b>";
 		outResults_parra.innerHTML += startingWeightLbs + "</b>";
 		outResults_parra.innerHTML += " lbs<br/>";
 		outResults_parra.innerHTML += "Goal Weight: <b>";
-		outResults_parra.innerHTML += goalWeight.toFixed(1) + "</b>";
+		outResults_parra.innerHTML += Math.round(goalWeight) + "</b>";
 		outResults_parra.innerHTML += " lbs<br/>";
-		outResults_parra.innerHTML += "Lbs from Goal Weight at start: " + (startingWeightLbs-goalWeight).toFixed(1);
+		outResults_parra.innerHTML += "Lbs from Goal Weight: " + (startingWeightLbs-goalWeight).toFixed(1);
 		outResults_parra.innerHTML += " lbs<br/>";
-		outResults_parra.innerHTML += "Body Fat at start: " + currentBodyFatPercentCalculated.toFixed(1);
+		outResults_parra.innerHTML += "Body Fat: " + currentBodyFatPercentCalculated.toFixed(1);
 		outResults_parra.innerHTML += "%, ";
 		outResults_parra.innerHTML += currentBodyFatLbs.toFixed(1);
 		outResults_parra.innerHTML += " lbs<br/>";
-		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Lean_body_mass\">Lean Body Mass (LBM)</a>: " + LBMLbs.toFixed(1);
+		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Lean_body_mass\">Lean Body Mass (LBM)</a>: " + Math.round(LBMLbs);
 		outResults_parra.innerHTML += " lbs<br/>";
-		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Basal_metabolic_rate\">Basal Metabolic Rate (BMR)</a>: " + BMRSelected.toFixed(1);
+		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Basal_metabolic_rate\">Basal Metabolic Rate (BMR)</a>: " + Math.round(BMRSelected);
 		outResults_parra.innerHTML += " cal/day<br/>";
 		outResults_parra.innerHTML += "Initial <a target=\"_blank\" href=\"https://tdeecalculator.net/\">Total Daily Energy Expenditure (TDEE)</a>: " + Math.round(TDEE);
 		outResults_parra.innerHTML += " cal/day<br/>";
@@ -170,41 +171,50 @@ button {
 		var netFatCals = TDEE - proteinCals - maxFatMobilizationCals - 80.0;
 		if (netFatCals < 0)	// Don't allow this number to go below 0
 			netFatCals = 0;
-		outMacros_parra.innerHTML = "Protein: " + proteinGrams.toFixed(1);
-		outMacros_parra.innerHTML += " g (" + proteinCals.toFixed(1);
+		var dietaryCals = proteinCals+netFatCals+80.0;
+		var goalCals = calsPerLbPerDay * goalWeight;
+		var goalFatCals = goalCals - 80.0 - (proteinGrams * 4);
+		// Form the string for macros
+		outMacros_parra.innerHTML = "Protein: " + Math.round(proteinGrams);
+		outMacros_parra.innerHTML += " g (" + Math.round(proteinCals);
 		outMacros_parra.innerHTML += " cals)<br/>";
 		outMacros_parra.innerHTML += "Carbs: 20 g (80 cals)<br/>"
-		outMacros_parra.innerHTML += "Fat: " + (netFatCals/9.0).toFixed(1);
+		outMacros_parra.innerHTML += "Fat: " + Math.round(netFatCals/9.0);
 		outMacros_parra.innerHTML += " g (";
-		outMacros_parra.innerHTML += netFatCals.toFixed(1);
+		outMacros_parra.innerHTML += Math.round(netFatCals);
 		outMacros_parra.innerHTML += " cals)<br/>";
 		outMacros_parra.innerHTML += "Your total Dietary Calories are ";
-		outMacros_parra.innerHTML += (proteinCals+80+netFatCals).toFixed(1);
-		outMacros_parra.innerHTML += " cals for maximum fat loss.<p/>";
+		outMacros_parra.innerHTML += Math.round(dietaryCals);
+		outMacros_parra.innerHTML += " cals for maximum fat loss. ";
+		outMacros_parra.innerHTML += "At this limit you will use ";
+		outMacros_parra.innerHTML += Math.round(maxFatMobilizationCals);
+		outMacros_parra.innerHTML += " calories from your body fat per day.<p/>";
 		outMacros_parra.innerHTML += "If you consume " + Math.round((netFatCals+fastingCaloriesAvailableFromFat)/9.0);
 		outMacros_parra.innerHTML += " g (";
 		outMacros_parra.innerHTML += Math.round((netFatCals+fastingCaloriesAvailableFromFat));
-		outMacros_parra.innerHTML += " calories) of fat you will stay at your current weight.<p/>";
-		// TBD - find the goal TDEE to calculate the goal numbers
-		var goalCals = calsPerLbPerDay * goalWeight;
-		var goalFatCals = goalCals - 80.0 - (proteinGrams * 4);
-		outMacros_parra.innerHTML += "At your goal weight you will be able to consume ";
+		outMacros_parra.innerHTML += " calories) of fat you will remain at your current weight.<p/>";
+		outMacros_parra.innerHTML += "At your goal weight of ";
+		outMacros_parra.innerHTML += goalWeight.toFixed(1);
+		outMacros_parra.innerHTML += " lbs you will need to consume ";
 		outMacros_parra.innerHTML += proteinGrams.toFixed(1) + " grams of Protein, 20 grams of Carbs, and ";
-		outMacros_parra.innerHTML += (goalFatCals/9.0).toFixed(1);
-		outMacros_parra.innerHTML += " grams of Fat.<br/>"
-		// Fasting story
+		outMacros_parra.innerHTML += Math.round(goalFatCals/9.0);
+		outMacros_parra.innerHTML += " grams of Fat. That will be "
+		var goalCals = goalFatCals + proteinGrams + 80;
+		outMacros_parra.innerHTML += Math.round(goalCals);
+		outMacros_parra.innerHTML += " calories.<br/>"
+		// Form the paragraph for the asting story
 		fasting_parra.innerHTML = "You currently use " + Math.round(TDEE);
 		fasting_parra.innerHTML += " cal/day. ";
 		fasting_parra.innerHTML += "You have " + Math.round(fastingCaloriesAvailableFromFat);
-		fasting_parra.innerHTML += " calories per day available from your body fat for maintenance. ";
+		fasting_parra.innerHTML += " calories per day available from your body fat. ";
 		if (fastingCaloriesAvailableFromFat >= TDEE)
 		{
-			fasting_parra.innerHTML += "You have more calories available from body fat than your daily requirements and may be able to fast.";
+			fasting_parra.innerHTML += "You have more calories available from body fat than your daily requirements and may be able to fast. Consult a medical professional to determine if fasting is compatible with your health conditions.";
 		}
 		else
 		{
 			fasting_parra.innerHTML += "You have less calories available from body fat than your daily requirements and may not be able to fast. ";
-			fasting_parra.innerHTML += "If you fast, your body may drop your base metabolism, energy expenditures or may consume protein stores. ";
+			fasting_parra.innerHTML += "If you fast, your body may temporarily drop your metabolism, energy expenditures or may consume protein stores. ";
 			fasting_parra.innerHTML += "You will be " + Math.round(fastingCaloriesAvailableFromFat - TDEE);
 			fasting_parra.innerHTML += " calories short per day<p/>";
 			fasting_parra.innerHTML += "The thermic effect of food contributes somewhere from 5-20% of your current TDEE number so if you are fasting that can reduce your TDEE. ";
@@ -216,8 +226,8 @@ button {
 			}
 			else
 			{
-				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food still leaves you in a caloric deficit during fasting. "
-				fasting_parra.innerHTML += "The Protein Sparing Modified fast solves this issue by providing the calories needed for the deficit.<br>"
+				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food still leaves you in a caloric deficit during fasting.<p/>"
+				fasting_parra.innerHTML += "The Protein Sparing Modified fast may be a better approach to fat loss since it solves the calorie deficit by providing the calories needed for the deficit from bodfy fat.<br>"
 			}
 		}
 		// Gainz
@@ -227,7 +237,7 @@ button {
 		gainz_parra.innerHTML += " lbs at your goal of: ";
 		gainz_parra.innerHTML += (goalBodyFatPct * 100).toFixed(1);
 		gainz_parra.innerHTML += "% Body Fat. That would be a weight of ";
-		gainz_parra.innerHTML += (maxLBM * (1+goalBodyFatPct)).toFixed(1);
+		gainz_parra.innerHTML += Math.round(maxLBM * (1+goalBodyFatPct));
 		gainz_parra.innerHTML += " lbs.";
 	}
 	</script>
@@ -301,11 +311,11 @@ button {
 <li>It could be helpful to frequently rerun these numbers based on updated measurements as you progress.</li>
 <li>For the limit on how much fat you can draw from your body per day, see: 
 <a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0022519304004175">A limit on the energy transfer rate from the human fat store in hypophagia</a>.</li>
-<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defense Formula or the US Navy Circumference Method</a></li>
+<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defence Formula or the US Navy Circumference Method</a></li>
 <li>Total Daily Energy Expenditure from the <a target=\"_blank\" href="http://www.superskinnyme.com/calculate-tdee.html">TDEE Formula by activity level</a></li>
 </ul>
 <h2>Protein Sparing Modified Fast (PSMF) Dietary Macros (per day)</h2>
-It is very important on the <a href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the macros listed here. 
+It is very important on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the macros listed here. 
 If you go below these numbers you risk lowering your metabolism and you actually can't lose body fat any faster. 
 Attempting to be just above the numbers is OK.
 <p id="DietaryMacros"></p>
@@ -318,7 +328,7 @@ or <a target="_blank" href="https://www.dietdoctor.com/low-carb/keto">ketogenic 
 This amount of fat in your diet frees up the maximum amount of fat from your body because it does not allow your metabolism to drop.</li>
 <li>For one of many scientific studies of PMSF, see <a target=\"_blank\" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1646394/">Multidisciplinary treatment of obesity with a protein-sparing modified fast: results in 668 outpatients.</a></li>
 </ul>
-<h2>Can You Fast?</h2>
+<h2>Can You Do an Extended Fast?</h2>
 One important question to ask when considering extended fasting is whether or not you have sufficient body fat to fast. 
 <p id="FastingResults"></p>
 <h2>How Much Muscle Can You Gain?</h2>
