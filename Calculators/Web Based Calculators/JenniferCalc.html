@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+<style>
+form {
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 180px;
+  text-align: right;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 20px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+</style>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function write_results(){
+		// Set up the paragraphs for the calculated results
+		var outResults_parra = document.getElementById('results');
+		var startingWeightLbs = parseFloat(document.getElementById('weight').value);
+		var startingWeightKG = startingWeightLbs/2.2;
+		var proteinLevelMultiplier = 1.0;
+		if ( document.JenniferCalc.actLevel[0].checked )
+		{
+			proteinLevelMultiplier = 1.0;
+		}
+		else
+		{
+			proteinLevelMultiplier = 1.2;
+		}
+		var carbsGrams = 20.0;
+		var carbsCals = 80.0;
+		var proteinGrams = startingWeightKG * proteinLevelMultiplier;
+		var proteinCals = proteinGrams * 4.0;
+		var proteinPlusCarbsCals = carbsCals + proteinCals;
+		var totalCals = proteinPlusCarbsCals / 0.2;
+		var fatCals = totalCals - carbsCals - proteinCals;
+		var fatGrams = fatCals / 9.0;
+		outResults_parra.innerHTML = "Current Weight: <b>";
+		outResults_parra.innerHTML += startingWeightLbs + "</b>";
+		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += "Protein: <b>";
+		outResults_parra.innerHTML += proteinGrams.toFixed(1) + "</b>";
+		outResults_parra.innerHTML += " grams<br/>";
+		outResults_parra.innerHTML += "Carbs: <b>";
+		outResults_parra.innerHTML += carbsGrams.toFixed(1) + "</b>";
+		outResults_parra.innerHTML += " grams<br/>";
+		outResults_parra.innerHTML += "Fat: <b>";
+		outResults_parra.innerHTML += fatGrams.toFixed(1) + "</b>";
+		outResults_parra.innerHTML += " grams<br/>";
+	}
+	</script>
+</head>
+<body>
+<h1>Jennifer's Food Macros Calculator</h1>
+<b>This calculator only works in Chrome or Firefox (not in IE).</b><p/>
+<b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
+<h2>Enter Your Numbers</h2>
+<form Name="JenniferCalc">
+    <div>
+        <label for="Weight">Weight :</label>
+        <input type="text" id="weight" name="user_weight" value="199.8"> lbs (without clothes)
+    </div>
+	<div>
+	Select your Activity Level<br/>
+		<input type="radio" name="actLevel" value="Sedentary" checked> No extreme exercise<br>
+		<input type="radio" name="actLevel" value="BodyBuilder"> Body Builder
+    </div>
+<div class="button">
+  <input type="button" value="Calculate" onclick="write_results();"/>
+</div>
+</form>
+<i>Scroll down for results after pressing Calculate</i><p/>
+<hr/>
+<h2>Daily Food Macros</h2>
+Using the 412 Keto group macros, your macros are:
+<p id="results"></p>
+<h2>Disclaimer</h2>
+Use this information at your own risk and with the advice of your medical professional. 
+We are not doctors nor do we pretend to be one on the Internet.
+We do not take responsibility for errors in these calculations.
+We do not guarantee that these numbers will work for people at the extremes of the ranges.
+If you discover an error in calculation, please let us know through email: keto at land-boards dot com.
+</body>
+</html>
