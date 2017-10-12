@@ -11,7 +11,7 @@ form div + div {
 label {
   /* To make sure that all labels have the same size and are properly aligned */
   display: inline-block;
-  width: 180px;
+  width: 120px;
   text-align: right;
 }
 
@@ -129,8 +129,8 @@ button {
 		// Calculate the body fat in lbs, goal weight, and the lean body mass
 		var currentBodyFatLbs = (currentBodyFatPercentCalculated/100.0) * startingWeightLbs;
 		var goalBodyFatPct = parseFloat(document.getElementById('BodyFat').value)/100.0;
-		var goalWeight = ((startingWeightLbs - currentBodyFatLbs) * (1.0 + goalBodyFatPct));
 		var LBMLbs = startingWeightLbs - currentBodyFatLbs;
+		var goalWeight = (LBMLbs * (1.0 + goalBodyFatPct));
 		var fastingCaloriesAvailableFromFat = currentBodyFatLbs * 31;
 		// Form the output string for the results
 		outResults_parra.innerHTML = "Current Weight: <b>";
@@ -145,6 +145,8 @@ button {
 		outResults_parra.innerHTML += "%, ";
 		outResults_parra.innerHTML += currentBodyFatLbs.toFixed(1);
 		outResults_parra.innerHTML += " lbs<br/>";
+		if (currentBodyFatPercentCalculated < goalBodyFatPct * 100.0)
+			outResults_parra.innerHTML += "Note: Your body fat percentage is already lower than your goal" + "<br/>";
 		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Lean_body_mass\">Lean Body Mass (LBM)</a>: " + Math.round(LBMLbs);
 		outResults_parra.innerHTML += " lbs<br/>";
 		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Basal_metabolic_rate\">Basal Metabolic Rate (BMR)</a>: " + Math.round(BMRSelected);
