@@ -59,6 +59,7 @@ button {
 		// Set up the paragraphs for the calculated results
 		var outResults_parra = document.getElementById('results');
 		var outMacros_parra = document.getElementById('DietaryMacros');
+		var maintMacros_parra = document.getElementById('MaintenanceMacros');
 		var fasting_parra = document.getElementById('FastingResults');
 		var gainz_parra = document.getElementById('Gainz');
 		// Grab the elements that the user filled into variables
@@ -185,9 +186,9 @@ button {
 		outMacros_parra.innerHTML += " g (";
 		outMacros_parra.innerHTML += Math.round(netFatCals);
 		outMacros_parra.innerHTML += " cals)<br/>";
-		outMacros_parra.innerHTML += "Your total Dietary Calories are ";
+		outMacros_parra.innerHTML += "Your total calories from food are ";
 		outMacros_parra.innerHTML += Math.round(dietaryCals);
-		outMacros_parra.innerHTML += " cals for maximum fat loss. ";
+		outMacros_parra.innerHTML += " calories per day for maximum fat loss. ";
 		outMacros_parra.innerHTML += "At this limit you will use ";
 		outMacros_parra.innerHTML += Math.round(maxFatMobilizationCals);
 		outMacros_parra.innerHTML += " calories from your body fat per day.<p/>";
@@ -195,15 +196,15 @@ button {
 		outMacros_parra.innerHTML += " g (";
 		outMacros_parra.innerHTML += Math.round((netFatCals+fastingCaloriesAvailableFromFat));
 		outMacros_parra.innerHTML += " calories) of fat you will remain at your current weight.<p/>";
-		outMacros_parra.innerHTML += "At your goal weight of ";
-		outMacros_parra.innerHTML += goalWeight.toFixed(1);
-		outMacros_parra.innerHTML += " lbs you will need to consume ";
-		outMacros_parra.innerHTML += proteinGrams.toFixed(1) + " grams of Protein, 20 grams of Carbs, and ";
-		outMacros_parra.innerHTML += Math.round(goalFatCals/9.0);
-		outMacros_parra.innerHTML += " grams of Fat. That will be "
+		maintMacros_parra.innerHTML = "At your goal weight of ";
+		maintMacros_parra.innerHTML += goalWeight.toFixed(1);
+		maintMacros_parra.innerHTML += " lbs you will need to consume ";
+		maintMacros_parra.innerHTML += proteinGrams.toFixed(1) + " grams of Protein, 20 grams of Carbs, and ";
+		maintMacros_parra.innerHTML += Math.round(goalFatCals/9.0);
+		maintMacros_parra.innerHTML += " grams of Fat. That will be "
 		var goalCals = goalFatCals + proteinGrams + 80;
-		outMacros_parra.innerHTML += Math.round(goalCals);
-		outMacros_parra.innerHTML += " calories.<br/>"
+		maintMacros_parra.innerHTML += Math.round(goalCals);
+		maintMacros_parra.innerHTML += " calories.<br/>"
 		// Form the paragraph for the asting story
 		fasting_parra.innerHTML = "You currently use " + Math.round(TDEE);
 		fasting_parra.innerHTML += " cal/day. ";
@@ -229,7 +230,7 @@ button {
 			else
 			{
 				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food still leaves you in a caloric deficit during fasting.<p/>"
-				fasting_parra.innerHTML += "The Protein Sparing Modified fast may be a better approach to fat loss since it solves the calorie deficit by providing the calories needed for the deficit from bodfy fat.<br>"
+				fasting_parra.innerHTML += "The Protein Sparing Modified fast may be a better approach to fat loss since it solves the calorie deficit by providing the calories needed for the deficit from body fat.<br>"
 			}
 		}
 		// Gainz
@@ -260,27 +261,27 @@ button {
     </div>
 	<div>
         <label for="Height">Height :</label>
-        <input type="text" id="height" name="user_height" value="70"> inches (bare feet)
+        <input type="text" id="height" name="user_height" value="70.5"> inches (bare feet)
     </div>
     <div>
         <label for="Weight">Weight :</label>
-        <input type="text" id="weight" name="user_weight" value="199.8"> lbs (without clothes)
+        <input type="text" id="weight" name="user_weight" value="191.4"> lbs (without clothes)
     </div>
     <div>
         <label for="Neck">Neck :</label>
-        <input type="text" id="neck" name="user_neck" value="16"> inches (smallest circumference)
+        <input type="text" id="neck" name="user_neck" value="15.25"> inches (smallest circumference)
     </div>
     <div>
         <label for="Waist">Waist :</label>
-        <input type="text" id="waist" name="user_waist" value="39"> inches (at your belly button)
+        <input type="text" id="waist" name="user_waist" value="38"> inches (at your belly button)
     </div>
     <div>
         <label for="Ankle">Ankle :</label>
-        <input type="text" id="ankle" name="user_ankle" value="10"> inches (narrowest)
+        <input type="text" id="ankle" name="user_ankle" value="9"> inches (narrowest)
     </div>
     <div>
         <label for="Wrist">Wrist :</label>
-        <input type="text" id="wrist" name="user_wrist" value="7"> inches (at the boney part)
+        <input type="text" id="wrist" name="user_wrist" value="6.75"> inches (at the boney part)
     </div>
     <div>
         <label for="Hips">Hips (females) :</label>
@@ -309,18 +310,22 @@ button {
 <p id="results"></p>
 <h2>Notes</h2>
 <ul>
-<li>The Protein Sparing model attempts to conserve Lean Body Mass by leaving your dietary protein amount constant throughout.
+<li>This version of the Protein Sparing model attempts to conserve Lean Body Mass as much possible by keeping your dietary protein amount constant throughout the diet.
 <li>It could be helpful to frequently rerun these numbers based on updated measurements as you progress.</li>
 <li>For the limit on how much fat you can draw from your body per day, see: 
 <a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0022519304004175">A limit on the energy transfer rate from the human fat store in hypophagia</a>.</li>
-<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defence Formula or the US Navy Circumference Method</a></li>
+<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defense Formula or the US Navy Circumference Method</a></li>
 <li>Total Daily Energy Expenditure from the <a target=\"_blank\" href="http://www.superskinnyme.com/calculate-tdee.html">TDEE Formula by activity level</a></li>
 </ul>
 <h2>Protein Sparing Modified Fast (PSMF) Dietary Macros (per day)</h2>
 It is very important on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the macros listed here. 
 If you go below these numbers you risk lowering your metabolism and you actually can't lose body fat any faster. 
-Attempting to be just above the numbers is OK.
+It is better to be just above these macros than below the macros.
+It is also OK to substitute additional protein for fat (calorie for calorie).
+<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2804964/">Protein plus Insulin builds muscle.</a>
 <p id="DietaryMacros"></p>
+<h2>Maintenance Levels at Goal</h2>
+<p id="MaintenanceMacros"></p>
 <h2>Notes</h2>
 <ul>
 <li>The protein number is based on <a target="_blank" href="http://www.ketogains.com">KetoGains</a> protein macros.</li>
