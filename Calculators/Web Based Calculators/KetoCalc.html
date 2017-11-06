@@ -178,11 +178,11 @@ button {
 		var goalCals = calsPerLbPerDay * goalWeight;
 		var goalFatCals = goalCals - 80.0 - (proteinGrams * 4);
 		// Form the string for macros
-		outMacros_parra.innerHTML = "Protein: " + Math.round(proteinGrams);
-		outMacros_parra.innerHTML += " g (" + Math.round(proteinCals);
+		outMacros_parra.innerHTML = "Protein: " + proteinGrams.toFixed(1);
+		outMacros_parra.innerHTML += " g (" + proteinCals.toFixed(1);
 		outMacros_parra.innerHTML += " cals)<br/>";
 		outMacros_parra.innerHTML += "Carbs: 20 g (80 cals)<br/>"
-		outMacros_parra.innerHTML += "Fat: " + Math.round(netFatCals/9.0);
+		outMacros_parra.innerHTML += "Fat: " +(netFatCals/9.0).toFixed(1);
 		outMacros_parra.innerHTML += " g (";
 		outMacros_parra.innerHTML += Math.round(netFatCals);
 		outMacros_parra.innerHTML += " cals)<br/>";
@@ -265,7 +265,7 @@ button {
     </div>
     <div>
         <label for="Weight">Weight :</label>
-        <input type="text" id="weight" name="user_weight" value="191.4"> lbs (without clothes)
+        <input type="text" id="weight" name="user_weight" value="190.6"> lbs (without clothes)
     </div>
     <div>
         <label for="Neck">Neck :</label>
