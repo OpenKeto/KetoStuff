@@ -139,15 +139,91 @@ button {
 		outResults_parra.innerHTML += " lbs<br/>";
 		outResults_parra.innerHTML += "Goal Weight: <b>";
 		outResults_parra.innerHTML += Math.round(goalWeight) + "</b>";
-		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += " lbs (based on your target body fat percentage)<br/>";
 		outResults_parra.innerHTML += "Lbs from Goal Weight: " + (startingWeightLbs-goalWeight).toFixed(1);
-		outResults_parra.innerHTML += " lbs<br/>";
-		outResults_parra.innerHTML += "Body Fat: " + currentBodyFatPercentCalculated.toFixed(1);
+		outResults_parra.innerHTML += " lbs (based on your target body fat percentage)<br/>";
+		outResults_parra.innerHTML += "Current Body Fat: " + currentBodyFatPercentCalculated.toFixed(1);
 		outResults_parra.innerHTML += "%, ";
 		outResults_parra.innerHTML += currentBodyFatLbs.toFixed(1);
 		outResults_parra.innerHTML += " lbs<br/>";
+		if ( document.KetoCalc.gender[0].checked )	// males
+		{
+			if (userAge <= 25.0)
+			{
+				idealBodyFat = 8.5;
+			}
+			else if (userAge <= 30.0)
+			{
+				idealBodyFat = 10.5;
+			}
+			else if (userAge <= 35.0)
+			{
+				idealBodyFat = 12.7;
+			}
+			else if (userAge <= 40.0)
+			{
+				idealBodyFat = 13.7;
+			}
+			else if (userAge <= 45.0)
+			{
+				idealBodyFat = 15.3;
+			}
+			else if (userAge <= 50.0)
+			{
+				idealBodyFat = 16.4;
+			}
+			else if (userAge <= 55.0)
+			{
+				idealBodyFat = 18.9;
+			}
+			else
+			{
+				idealBodyFat = 20.9;
+			}
+		}
+		else
+		{
+			if (userAge <= 25.0)
+			{
+				idealBodyFat = 17.7;
+			}
+			else if (userAge <= 30.0)
+			{
+				idealBodyFat = 18.4;
+			}
+			else if (userAge <= 35.0)
+			{
+				idealBodyFat = 19.3;
+			}
+			else if (userAge <= 40.0)
+			{
+				idealBodyFat = 21.5;
+			}
+			else if (userAge <= 45.0)
+			{
+				idealBodyFat = 22.2;
+			}
+			else if (userAge <= 50.0)
+			{
+				idealBodyFat = 22.9;
+			}
+			else if (userAge <= 55.0)
+			{
+				idealBodyFat = 25.2;
+			}
+			else
+			{
+				idealBodyFat = 26.3;
+			}
+		}
+		outResults_parra.innerHTML += "Ideal Body Fat: " + idealBodyFat.toFixed(1);
+		outResults_parra.innerHTML += "% - ";
+		if (currentBodyFatPercentCalculated < idealBodyFat)
+			outResults_parra.innerHTML += "Note: Your current body fat % is already lower than your ideal body fat %" + "<br/>";
+		else
+			outResults_parra.innerHTML += "Note: Your current body fat % is higher than your ideal body fat %" + "<br/>";
 		if (currentBodyFatPercentCalculated < goalBodyFatPct * 100.0)
-			outResults_parra.innerHTML += "Note: Your body fat percentage is already lower than your goal" + "<br/>";
+			outResults_parra.innerHTML += "Note: Your body fat % is already lower than your goal body fat %" + "<br/>";
 		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Lean_body_mass\">Lean Body Mass (LBM)</a>: " + LBMLbs.toFixed(1);
 		outResults_parra.innerHTML += " lbs<br/>";
 		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Basal_metabolic_rate\">Basal Metabolic Rate (BMR)</a>: " + Math.round(BMRSelected);
@@ -159,7 +235,7 @@ button {
 		if ( document.KetoCalc.gender[0].checked )	// males
 		{
 			if (goalBodyFatPct < 0.05)
-				outResults_parra.innerHTML += "Warning: You have selected a very low body fat percentage as your goal!<p/>"
+				outResults_parra.innerHTML += "Warning: You have selected a very low body fat % as your goal!<p/>"
 		}
 		else		// females
 		{
@@ -265,7 +341,7 @@ button {
     </div>
     <div>
         <label for="Weight">Weight :</label>
-        <input type="text" id="weight" name="user_weight" value="190.6"> lbs (without clothes)
+        <input type="text" id="weight" name="user_weight" value="184.2"> lbs (without clothes)
     </div>
     <div>
         <label for="Neck">Neck :</label>
@@ -273,7 +349,7 @@ button {
     </div>
     <div>
         <label for="Waist">Waist :</label>
-        <input type="text" id="waist" name="user_waist" value="38"> inches (at your belly button)
+        <input type="text" id="waist" name="user_waist" value="35.5"> inches (at your belly button)
     </div>
     <div>
         <label for="Ankle">Ankle :</label>
@@ -314,8 +390,9 @@ button {
 <li>It could be helpful to frequently rerun these numbers based on updated measurements as you progress.</li>
 <li>For the limit on how much fat you can draw from your body per day, see: 
 <a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0022519304004175">A limit on the energy transfer rate from the human fat store in hypophagia</a>.</li>
-<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defense Formula or the US Navy Circumference Method</a></li>
-<li>Total Daily Energy Expenditure from the <a target=\"_blank\" href="http://www.superskinnyme.com/calculate-tdee.html">TDEE Formula by activity level</a></li>
+<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defense Formula or the US Navy Circumference Method.</a></li>
+<li>Total Daily Energy Expenditure from the <a target=\"_blank\" href="http://www.superskinnyme.com/calculate-tdee.html">TDEE Formula by activity level</a>.</li>
+<li>Ideal body fat percentage as a function of weight based on Jackson and Pollock as shown <a target=\"_blank\" href="https://www.builtlean.com/2010/08/03/ideal-body-fat-percentage-chart/">on this web page</a>.</li>
 </ul>
 <h2>Protein Sparing Modified Fast (PSMF) Dietary Macros (per day)</h2>
 It is very important on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the macros listed here. 
