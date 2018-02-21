@@ -256,12 +256,15 @@ button {
 		// Form the string for macros
 		outMacros_parra.innerHTML = "Protein: " + proteinGrams.toFixed(1);
 		outMacros_parra.innerHTML += " g (" + proteinCals.toFixed(1);
-		outMacros_parra.innerHTML += " cals)<br/>";
-		outMacros_parra.innerHTML += "Carbs: 20 g (80 cals)<br/>"
+		outMacros_parra.innerHTML += " cals), " + (proteinCals*100/dietaryCals).toFixed(1);
+		outMacros_parra.innerHTML += "% of calories<br/>";
+		outMacros_parra.innerHTML += "Carbs: 20 g (80 cals), " + (8000/dietaryCals).toFixed(1);
+		outMacros_parra.innerHTML += "% of calories<br/>"
 		outMacros_parra.innerHTML += "Fat: " +(netFatCals/9.0).toFixed(1);
 		outMacros_parra.innerHTML += " g (";
 		outMacros_parra.innerHTML += Math.round(netFatCals);
-		outMacros_parra.innerHTML += " cals)<br/>";
+		outMacros_parra.innerHTML += " cals), " + (netFatCals*100/dietaryCals).toFixed(1);
+		outMacros_parra.innerHTML += "% of calories<br/>";
 		outMacros_parra.innerHTML += "Your total calories from food are ";
 		outMacros_parra.innerHTML += Math.round(dietaryCals);
 		outMacros_parra.innerHTML += " calories per day for maximum fat loss. ";
@@ -278,7 +281,7 @@ button {
 		maintMacros_parra.innerHTML += proteinGrams.toFixed(1) + " grams of Protein, 20 grams of Carbs, and ";
 		maintMacros_parra.innerHTML += Math.round(goalFatCals/9.0);
 		maintMacros_parra.innerHTML += " grams of Fat. That will be "
-		var goalCals = goalFatCals + proteinGrams + 80;
+		var goalCals = goalFatCals + (proteinGrams * 4) + 80;
 		maintMacros_parra.innerHTML += Math.round(goalCals);
 		maintMacros_parra.innerHTML += " calories.<br/>"
 		// Form the paragraph for the asting story
@@ -341,7 +344,7 @@ button {
     </div>
     <div>
         <label for="Weight">Weight :</label>
-        <input type="text" id="weight" name="user_weight" value="178.0"> lbs (without clothes)
+        <input type="text" id="weight" name="user_weight" value="172.6"> lbs (without clothes)
     </div>
     <div>
         <label for="Neck">Neck :</label>
@@ -349,7 +352,7 @@ button {
     </div>
     <div>
         <label for="Waist">Waist :</label>
-        <input type="text" id="waist" name="user_waist" value="34.0"> inches (at your belly button)
+        <input type="text" id="waist" name="user_waist" value="33.75"> inches (at your belly button)
     </div>
     <div>
         <label for="Ankle">Ankle :</label>
@@ -361,7 +364,7 @@ button {
     </div>
     <div>
         <label for="Hips">Hips (females) :</label>
-        <input type="text" id="hips" name="user_hips" value="44"> inches
+        <input type="text" id="hips" name="user_hips" value="34"> inches
     </div>
 	<div>
 	Select your <a target=\"_blank\" href="https://ketogains.com/ketogains-calculator/" >Activity Level</a><br/>
