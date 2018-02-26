@@ -58,8 +58,9 @@ button {
 	function write_results(){
 		// Set up the paragraphs for the calculated results
 		var outResults_parra = document.getElementById('results');
-		var outMacros_parra = document.getElementById('DietaryMacros');
-		var maintMacros_parra = document.getElementById('MaintenanceMacros');
+		var PsmfMacros_parra = document.getElementById('DietaryMacros');
+		var maintMacrosAtGoal_parra = document.getElementById('MaintenanceAtGoalMacros');
+		var maintMacrosCurrent_parra = document.getElementById('MaintenanceCurrentMacros');
 		var fasting_parra = document.getElementById('FastingResults');
 		var gainz_parra = document.getElementById('Gainz');
 		// Grab the elements that the user filled into variables
@@ -126,7 +127,7 @@ button {
 			BMRSelected = bmrFemale;
 			currentBodyFatPercentCalculated = ((163.205*(Math.log10(hipsInches + waistInches - neckInches)))-(97.684*(Math.log10(heightInches)))-78.387);
 		}
-		var calsPerLbPerDay = TDEE / startingWeightLbs;
+		var currentCalsPerLbPerDay = TDEE / startingWeightLbs;
 		// Calculate the body fat in lbs, goal weight, and the lean body mass
 		var currentBodyFatLbs = (currentBodyFatPercentCalculated/100.0) * startingWeightLbs;
 		var goalBodyFatPct = parseFloat(document.getElementById('BodyFat').value)/100.0;
@@ -137,11 +138,6 @@ button {
 		outResults_parra.innerHTML = "Current Weight: <b>";
 		outResults_parra.innerHTML += startingWeightLbs + "</b>";
 		outResults_parra.innerHTML += " lbs<br/>";
-		outResults_parra.innerHTML += "Goal Weight: <b>";
-		outResults_parra.innerHTML += Math.round(goalWeight) + "</b>";
-		outResults_parra.innerHTML += " lbs (based on your target body fat percentage)<br/>";
-		outResults_parra.innerHTML += "Lbs from Goal Weight: " + (startingWeightLbs-goalWeight).toFixed(1);
-		outResults_parra.innerHTML += " lbs (based on your target body fat percentage)<br/>";
 		outResults_parra.innerHTML += "Current Body Fat: " + currentBodyFatPercentCalculated.toFixed(1);
 		outResults_parra.innerHTML += "%, ";
 		outResults_parra.innerHTML += currentBodyFatLbs.toFixed(1);
@@ -216,75 +212,107 @@ button {
 				idealBodyFat = 26.3;
 			}
 		}
-		outResults_parra.innerHTML += "Ideal Body Fat: " + idealBodyFat.toFixed(1);
-		outResults_parra.innerHTML += "% - ";
 		if (currentBodyFatPercentCalculated < idealBodyFat)
-			outResults_parra.innerHTML += "Note: Your current body fat % is already lower than your ideal body fat %" + "<br/>";
+			outResults_parra.innerHTML += "Your current body fat % is already lower than your ideal body fat %." + "<br/>";
 		else
-			outResults_parra.innerHTML += "Note: Your current body fat % is higher than your ideal body fat %" + "<br/>";
+			outResults_parra.innerHTML += "Your current body fat % is higher than your ideal body fat %.<br/>";
 		if (currentBodyFatPercentCalculated < goalBodyFatPct * 100.0)
-			outResults_parra.innerHTML += "Note: Your body fat % is already lower than your goal body fat %" + "<br/>";
+			outResults_parra.innerHTML += "Your body fat % is already lower than your goal body fat %.<br/>";
+		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://www.builtlean.com/2010/08/03/ideal-body-fat-percentage-chart/\">Ideal Body Fat:</a> " + idealBodyFat.toFixed(1);
+		outResults_parra.innerHTML += "%<br/>";
 		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Lean_body_mass\">Lean Body Mass (LBM)</a>: " + LBMLbs.toFixed(1);
 		outResults_parra.innerHTML += " lbs<br/>";
 		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Basal_metabolic_rate\">Basal Metabolic Rate (BMR)</a>: " + Math.round(BMRSelected);
 		outResults_parra.innerHTML += " cal/day<br/>";
-		outResults_parra.innerHTML += "Initial <a target=\"_blank\" href=\"https://tdeecalculator.net/\">Total Daily Energy Expenditure (TDEE)</a>: " + Math.round(TDEE);
+		outResults_parra.innerHTML += "<a target=\"_blank\" href=\"https://tdeecalculator.net/\">Total Daily Energy Expenditure</a> (TDEE): " + Math.round(TDEE);
 		outResults_parra.innerHTML += " cal/day<br/>";
-		outResults_parra.innerHTML += "Initial Maximum Fat Loss on Protein Sparing Modified Fast: " + (fastingCaloriesAvailableFromFat/3500).toFixed(2);
-		outResults_parra.innerHTML += " lbs of body fat per day<br/>";
+		// Print a warning if the goal fat percentage is too low for healthy
 		if ( document.KetoCalc.gender[0].checked )	// males
 		{
 			if (goalBodyFatPct < 0.05)
-				outResults_parra.innerHTML += "Warning: You have selected a very low body fat % as your goal!<p/>"
+				outResults_parra.innerHTML += "Warning: You have selected a very low body fat % for your goal!<p/>"
 		}
 		else		// females
 		{
 			if (goalBodyFatPct < 0.12)
-				outResults_parra.innerHTML += "Warning: You have selected a very low body fat percentage as your goal!<p/>"
+				outResults_parra.innerHTML += "Warning: You have selected a very low body fat percentage for your goal!<p/>"
 		}
 
-		// Calculate the dietary macros
-		var proteinGrams = proteinNeed * LBMLbs;
-		var proteinCals = proteinGrams * 4.0;
-		var maxFatMobilizationCals = currentBodyFatLbs * 31;
-		var netFatCals = TDEE - proteinCals - maxFatMobilizationCals - 80.0;
+		// Maintenance Macros at Current Weight
+		var proteinGramsConstant = proteinNeed * LBMLbs;
+		var proteinCalsConstant = proteinGramsConstant * 4.0;
+		var fatCurrentCals = TDEE - proteinCalsConstant - 80;
+		maintMacrosCurrent_parra.innerHTML = "Protein: " + Math.round(proteinGramsConstant) + " grams, ";
+		maintMacrosCurrent_parra.innerHTML += Math.round(proteinCalsConstant);
+		maintMacrosCurrent_parra.innerHTML += " calories, ";
+		maintMacrosCurrent_parra.innerHTML += (100 * proteinCalsConstant / TDEE).toFixed(1);
+		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Carbs: Less than 20 grams, 80 calories, ";
+		maintMacrosCurrent_parra.innerHTML += (8000.00/TDEE).toFixed(1);
+		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Fat: " + Math.round(fatCurrentCals/9.0) + " grams, ";
+		maintMacrosCurrent_parra.innerHTML += Math.round(fatCurrentCals);
+		maintMacrosCurrent_parra.innerHTML += " calories, "
+		maintMacrosCurrent_parra.innerHTML += (100 * fatCurrentCals/TDEE).toFixed(1);
+		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		// Maintenance Macros at Goal Weight
+		var goalCals = currentCalsPerLbPerDay * goalWeight;
+		var goalFatCals = goalCals - 80.0 - proteinCalsConstant;
+		maintMacrosAtGoal_parra.innerHTML = "Goal Weight: <b>";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(goalWeight) + "</b>";
+		maintMacrosAtGoal_parra.innerHTML += " lbs<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "Lbs from Goal Weight: " + (startingWeightLbs-goalWeight).toFixed(1);
+		maintMacrosAtGoal_parra.innerHTML += " lbs<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "You will need to consume (TDEE): ";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(goalCals);
+		maintMacrosAtGoal_parra.innerHTML += " calories<br/>"
+		maintMacrosAtGoal_parra.innerHTML += "Protein: ";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(proteinGramsConstant) + " grams, ";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(100.0 * proteinCalsConstant / goalCals);
+		maintMacrosAtGoal_parra.innerHTML += "% of calories<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "Carbs: 20 grams, ";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(8000.0 / goalCals);
+		maintMacrosAtGoal_parra.innerHTML += "% of calories<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "Fat: ";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(goalFatCals/9.0);
+		maintMacrosAtGoal_parra.innerHTML += " grams, ";
+		maintMacrosAtGoal_parra.innerHTML += Math.round(100.0 * goalFatCals / goalCals);
+		maintMacrosAtGoal_parra.innerHTML += "% of calories<br/>";
+		// Calculate the PSMF macros
+		var maxFatMobilizationCals = currentBodyFatLbs * 31.0;
+		var netFatCals = TDEE - proteinCalsConstant - maxFatMobilizationCals - 80.0;
 		if (netFatCals < 0)	// Don't allow this number to go below 0
 			netFatCals = 0;
-		var dietaryCals = proteinCals+netFatCals+80.0;
-		var goalCals = calsPerLbPerDay * goalWeight;
-		var goalFatCals = goalCals - 80.0 - (proteinGrams * 4);
+		var PsmfDietaryCals = proteinCalsConstant+netFatCals+80.0;
 		// Form the string for macros
-		outMacros_parra.innerHTML = "Protein: " + proteinGrams.toFixed(1);
-		outMacros_parra.innerHTML += " g (" + proteinCals.toFixed(1);
-		outMacros_parra.innerHTML += " cals), " + (proteinCals*100/dietaryCals).toFixed(1);
-		outMacros_parra.innerHTML += "% of calories<br/>";
-		outMacros_parra.innerHTML += "Carbs: 20 g (80 cals), " + (8000/dietaryCals).toFixed(1);
-		outMacros_parra.innerHTML += "% of calories<br/>"
-		outMacros_parra.innerHTML += "Fat: " +(netFatCals/9.0).toFixed(1);
-		outMacros_parra.innerHTML += " g (";
-		outMacros_parra.innerHTML += Math.round(netFatCals);
-		outMacros_parra.innerHTML += " cals), " + (netFatCals*100/dietaryCals).toFixed(1);
-		outMacros_parra.innerHTML += "% of calories<br/>";
-		outMacros_parra.innerHTML += "Your total calories from food are ";
-		outMacros_parra.innerHTML += Math.round(dietaryCals);
-		outMacros_parra.innerHTML += " calories per day for maximum fat loss. ";
-		outMacros_parra.innerHTML += "At this limit you will use ";
-		outMacros_parra.innerHTML += Math.round(maxFatMobilizationCals);
-		outMacros_parra.innerHTML += " calories from your body fat per day.<p/>";
-		outMacros_parra.innerHTML += "If you consume " + Math.round((netFatCals+fastingCaloriesAvailableFromFat)/9.0);
-		outMacros_parra.innerHTML += " g (";
-		outMacros_parra.innerHTML += Math.round((netFatCals+fastingCaloriesAvailableFromFat));
-		outMacros_parra.innerHTML += " calories) of fat you will remain at your current weight.<p/>";
-		maintMacros_parra.innerHTML = "At your goal weight of ";
-		maintMacros_parra.innerHTML += goalWeight.toFixed(1);
-		maintMacros_parra.innerHTML += " lbs you will need to consume ";
-		maintMacros_parra.innerHTML += proteinGrams.toFixed(1) + " grams of Protein, 20 grams of Carbs, and ";
-		maintMacros_parra.innerHTML += Math.round(goalFatCals/9.0);
-		maintMacros_parra.innerHTML += " grams of Fat. That will be "
-		var goalCals = goalFatCals + (proteinGrams * 4) + 80;
-		maintMacros_parra.innerHTML += Math.round(goalCals);
-		maintMacros_parra.innerHTML += " calories.<br/>"
-		// Form the paragraph for the asting story
+		PsmfMacros_parra.innerHTML = "Your total calories from food should be ";
+		PsmfMacros_parra.innerHTML += Math.round(PsmfDietaryCals);
+		PsmfMacros_parra.innerHTML += " calories per day for maximum fat loss.<br/>";
+		PsmfMacros_parra.innerHTML += "Protein: " + proteinGramsConstant.toFixed(1);
+		PsmfMacros_parra.innerHTML += " g (" + proteinCalsConstant.toFixed(1);
+		PsmfMacros_parra.innerHTML += " cals), " + (proteinCalsConstant*100/PsmfDietaryCals).toFixed(1);
+		PsmfMacros_parra.innerHTML += "% of calories<br/>";
+		PsmfMacros_parra.innerHTML += "Carbs: 20 g (80 cals), " + (8000/PsmfDietaryCals).toFixed(1);
+		PsmfMacros_parra.innerHTML += "% of calories<br/>"
+		PsmfMacros_parra.innerHTML += "Fat: " +(netFatCals/9.0).toFixed(1);
+		PsmfMacros_parra.innerHTML += " g (";
+		PsmfMacros_parra.innerHTML += Math.round(netFatCals);
+		PsmfMacros_parra.innerHTML += " cals), " + (netFatCals*100/PsmfDietaryCals).toFixed(1);
+		PsmfMacros_parra.innerHTML += "% of calories<br/>";
+		PsmfMacros_parra.innerHTML += "Initial Maximum Fat Loss on Protein Sparing Modified Fast: ";
+		PsmfMacros_parra.innerHTML += (fastingCaloriesAvailableFromFat/3500).toFixed(2);
+		PsmfMacros_parra.innerHTML += " lbs per day<br/>";
+		PsmfMacros_parra.innerHTML += "At this limit you will use ";
+		PsmfMacros_parra.innerHTML += Math.round(maxFatMobilizationCals);
+		PsmfMacros_parra.innerHTML += " calories from your body fat per day.<br/>";
+		PsmfMacros_parra.innerHTML += "Estimated time to reach goal: ";
+		PsmfMacros_parra.innerHTML += Math.round((startingWeightLbs-goalWeight)/(maxFatMobilizationCals/3500));
+		PsmfMacros_parra.innerHTML += " days<br/>";
+		PsmfMacros_parra.innerHTML += "If you consume " + Math.round((fatCurrentCals)/9.0);
+		PsmfMacros_parra.innerHTML += " g (";
+		PsmfMacros_parra.innerHTML += Math.round((netFatCals+fastingCaloriesAvailableFromFat));
+		PsmfMacros_parra.innerHTML += " calories) of fat you will remain at your current weight.<br/>";
+		// Form the paragraph for the Fasting story
 		fasting_parra.innerHTML = "You currently use " + Math.round(TDEE);
 		fasting_parra.innerHTML += " cal/day. ";
 		fasting_parra.innerHTML += "You have " + Math.round(fastingCaloriesAvailableFromFat);
@@ -325,7 +353,7 @@ button {
 	</script>
 </head>
 <body>
-<h1>Protein Sparing Dietary Calculator</h1>
+<h1>Dietary Macros Calculator</h1>
 <b>This calculator only works in Chrome or Firefox (not in IE).</b><p/>
 <b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
 <h2>Enter Your Numbers</h2>
@@ -385,33 +413,29 @@ button {
 </form>
 <i>Scroll down for results after pressing Calculate</i><p/>
 <hr/>
-<h2>Your Scale and Metabolism Numbers</h2>
+<h2>Your Current Numbers</h2>
 <p id="results"></p>
-<h2>Notes</h2>
-<ul>
-<li>This version of the Protein Sparing model attempts to conserve Lean Body Mass as much possible by keeping your dietary protein amount constant throughout the diet.
-<li>It could be helpful to frequently rerun these numbers based on updated measurements as you progress.</li>
-<li>For the limit on how much fat you can draw from your body per day, see: 
-<a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0022519304004175">A limit on the energy transfer rate from the human fat store in hypophagia</a>.</li>
-<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defense Formula or the US Navy Circumference Method.</a></li>
-<li>Total Daily Energy Expenditure from the <a target=\"_blank\" href="http://www.superskinnyme.com/calculate-tdee.html">TDEE Formula by activity level</a>.</li>
-<li>Ideal body fat percentage as a function of weight based on Jackson and Pollock as shown <a target=\"_blank\" href="https://www.builtlean.com/2010/08/03/ideal-body-fat-percentage-chart/">on this web page</a>.</li>
-</ul>
+<h2>Macro Levels to Maintain Current Weight</h2>
+<p id="MaintenanceCurrentMacros"></p>
+<h2>Goal Numbers</h2>
+<p id="MaintenanceAtGoalMacros"></p>
 <h2>Protein Sparing Modified Fast (PSMF) Dietary Macros (per day)</h2>
-It is very important on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the macros listed here. 
+It is very important on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the protein macro listed here as well as the total number of calories. 
 If you go below these numbers you risk lowering your metabolism and you actually can't lose body fat any faster. 
-It is better to be just above these macros than below the macros.
-It is also OK to substitute additional protein for fat (calorie for calorie).
-<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2804964/">Protein plus Insulin builds muscle.</a>
+It is better to be slightly above these macros than below the macros.
+It is also OK to substitute additional protein for fat (as long as total calories are reached) but you may feel better with as much fat as possible.
+Don't forget that <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2804964/">Protein plus Insulin builds muscle.</a>
 <p id="DietaryMacros"></p>
-<h2>Maintenance Levels at Goal</h2>
-<p id="MaintenanceMacros"></p>
-<h2>Notes</h2>
+<h3>PSMF Notes</h3>
 <ul>
+<li>This version of the Protein Sparing model attempts to conserve Lean Body Mass as much possible by keeping your dietary protein amount above your protein requirements throughout the diet.
 <li>The protein number is based on <a target="_blank" href="http://www.ketogains.com">KetoGains</a> protein macros.</li>
 <li>The carb number is based on <a target="_blank" href="https://sa.atkins.com/why-atkins/the-phases/phase-1-induction/">Atkins Induction</a> 
 or <a target="_blank" href="https://www.dietdoctor.com/low-carb/keto">ketogenic dietary levels</a> to guarantee ketosis.</li>
-<li>The fat number is determined based on the fastest possible fat loss.
+<li>For the limit on how much fat you can draw from your body per day, see: 
+<a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0022519304004175">A limit on the energy transfer rate from the human fat store in hypophagia</a>. 
+Also See <a target="_blank" href="http://land-boards.com/T2D/2017/10/01/hypophagia-how-much-fat-can-i-lose-in-a-day/">Hypophagia – How much fat can I lose in a day?</a>"</li>
+<li>The fat from your body value is determined based on the fastest possible fat loss.
 This amount of fat in your diet frees up the maximum amount of fat from your body because it does not allow your metabolism to drop.</li>
 <li>For one of many scientific studies of PMSF, see <a target=\"_blank\" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1646394/">Multidisciplinary treatment of obesity with a protein-sparing modified fast: results in 668 outpatients.</a></li>
 </ul>
@@ -420,6 +444,14 @@ One important question to ask when considering extended fasting is whether or no
 <p id="FastingResults"></p>
 <h2>How Much Muscle Can You Gain?</h2>
 <p id="Gainz"></p>
+<h2>Notes</h2>
+<ul>
+<li>It could be helpful to frequently rerun these numbers based on updated measurements as you progress.</li>
+<li>Body Fat percentage from the <a target=\"_blank\" href="http://www.healthydietbase.com/five-ways-to-estimate-body-fat-percentage-using-a-tape-measure/">Department of Defense Formula or the US Navy Circumference Method.</a></li>
+<li>Total Daily Energy Expenditure from the <a target=\"_blank\" href="http://www.superskinnyme.com/calculate-tdee.html">TDEE Formula by activity level</a>.</li>
+<li>Ideal body fat percentage as a function of weight based on Jackson and Pollock (Chart #2) as shown <a target=\"_blank\" href="https://www.builtlean.com/2010/08/03/ideal-body-fat-percentage-chart/">on this web page</a>.</li>
+</ul>
+<img src="https://www.builtlean.com/wp-content/uploads/2010/08/Ideal-Body-Fat-Percentage-Chart3.jpg"></img>
 <h2>Disclaimer</h2>
 Use this information at your own risk and with the advice of your medical professional. 
 We are not doctors nor do we pretend to be one on the Internet.
