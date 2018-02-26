@@ -246,15 +246,15 @@ button {
 		maintMacrosCurrent_parra.innerHTML += Math.round(proteinCalsConstant);
 		maintMacrosCurrent_parra.innerHTML += " calories, ";
 		maintMacrosCurrent_parra.innerHTML += (100 * proteinCalsConstant / TDEE).toFixed(1);
-		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
-		maintMacrosCurrent_parra.innerHTML += "Carbs: Less than 20 grams, 80 calories, ";
+		maintMacrosCurrent_parra.innerHTML += "% of calories (minimum)<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Net Carbs: 20 grams, 80 calories, ";
 		maintMacrosCurrent_parra.innerHTML += (8000.00/TDEE).toFixed(1);
-		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "% of calories (maximum)<br/>";
 		maintMacrosCurrent_parra.innerHTML += "Fat: " + Math.round(fatCurrentCals/9.0) + " grams, ";
 		maintMacrosCurrent_parra.innerHTML += Math.round(fatCurrentCals);
 		maintMacrosCurrent_parra.innerHTML += " calories, "
 		maintMacrosCurrent_parra.innerHTML += (100 * fatCurrentCals/TDEE).toFixed(1);
-		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "% of calories (maximum, less if you exceed protein)<br/>";
 		// Maintenance Macros at Goal Weight
 		var goalCals = currentCalsPerLbPerDay * goalWeight;
 		var goalFatCals = goalCals - 80.0 - proteinCalsConstant;
@@ -269,15 +269,15 @@ button {
 		maintMacrosAtGoal_parra.innerHTML += "Protein: ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(proteinGramsConstant) + " grams, ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(100.0 * proteinCalsConstant / goalCals);
-		maintMacrosAtGoal_parra.innerHTML += "% of calories<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "% of calories (minimum)<br/>";
 		maintMacrosAtGoal_parra.innerHTML += "Carbs: 20 grams, ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(8000.0 / goalCals);
-		maintMacrosAtGoal_parra.innerHTML += "% of calories<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "% of calories (maximum)<br/>";
 		maintMacrosAtGoal_parra.innerHTML += "Fat: ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(goalFatCals/9.0);
 		maintMacrosAtGoal_parra.innerHTML += " grams, ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(100.0 * goalFatCals / goalCals);
-		maintMacrosAtGoal_parra.innerHTML += "% of calories<br/>";
+		maintMacrosAtGoal_parra.innerHTML += "% of calories (maximum, less if you exceed protein)<br/>";
 		// Calculate the PSMF macros
 		var maxFatMobilizationCals = currentBodyFatLbs * 31.0;
 		var netFatCals = TDEE - proteinCalsConstant - maxFatMobilizationCals - 80.0;
@@ -420,7 +420,8 @@ button {
 <h2>Goal Numbers</h2>
 <p id="MaintenanceAtGoalMacros"></p>
 <h2>Protein Sparing Modified Fast (PSMF) Dietary Macros (per day)</h2>
-It is very important on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the protein macro listed here as well as the total number of calories. 
+It is very important on my version of the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">PSMF</a> that you eat at least the protein amount.
+It is also important to eat at least the total number of calories. 
 If you go below these numbers you risk lowering your metabolism and you actually can't lose body fat any faster. 
 It is better to be slightly above these macros than below the macros.
 It is also OK to substitute additional protein for fat (as long as total calories are reached) but you may feel better with as much fat as possible.
