@@ -1,0 +1,593 @@
+Day,Metric,Unit,Amount
+2017-10-22,"Weight",lbs,193.2
+2017-10-23,"Blood Glucose",mg/dL,116.0
+2017-10-23,"Weight",lbs,192.8
+2017-10-23,"Blood Glucose",mg/dL,108.0
+2017-10-24,"Waist Size",in,38.0
+2017-10-24,"Blood Glucose",mg/dL,97.0
+2017-10-24,"Weight",lbs,191.4
+2017-10-24,"Body Temperature",°F,97.4
+2017-10-24,"Body Fat",%,30.1
+2017-10-25,"Blood Glucose",mg/dL,90.0
+2017-10-25,"Body Fat",%,30.1
+2017-10-25,"Weight",lbs,192.8
+2017-10-25,"Body Temperature",°F,96.7
+2017-10-26,"Weight",lbs,192.0
+2017-10-26,"Body Temperature",°F,97.8
+2017-10-26,"Blood Glucose",mg/dL,95.0
+2017-10-27,"Weight",lbs,193.3
+2017-10-27,"Body Temperature",°F,96.5
+2017-10-27,"Ketones (Breath)",ppm,8.8
+2017-10-28,"Ketones (Breath)",ppm,11.8
+2017-10-28,"Waist Size",in,37.0
+2017-10-28,"Weight (Nokia)",lbs,193.182
+2017-10-28,"Body Fat (Nokia)",%,21.683
+2017-10-28,"Body Fat (Nokia)",%,23.256
+2017-10-29,"Body Fat (Nokia)",%,24.372
+2017-10-29,"Weight (Nokia)",lbs,194.331
+2017-10-29,"Body Fat (Nokia)",%,23.109
+2017-10-29,"Ketones (Breath)",ppm,10.1
+2017-10-29,"Weight (Nokia)",lbs,190.79
+2017-10-29,"Body Fat (Nokia)",%,25.098
+2017-10-29,"Body Temperature",°F,97.7
+2017-10-29,"Weight (Nokia)",lbs,190.848
+2017-10-29,"Body Fat (Nokia)",%,22.988
+2017-10-29,"Weight (Nokia)",lbs,190.931
+2017-10-29,"Body Fat (Nokia)",%,23.128
+2017-10-29,"Weight (Nokia)",lbs,191.857
+2017-10-30,"Weight (Nokia)",lbs,193.72
+2017-10-30,"Body Fat (Nokia)",%,19.677
+2017-10-30,"Blood Glucose",mg/dL,74.0
+2017-10-30,"Weight (Nokia)",lbs,191.82
+2017-10-30,"Body Fat (Nokia)",%,23.963
+2017-10-30,"Weight (Nokia)",lbs,192.422
+2017-10-30,"Body Fat (Nokia)",%,24.003
+2017-10-31,"Blood Glucose",mg/dL,95.0
+2017-10-31,"Weight (Nokia)",lbs,190.321
+2017-10-31,"Body Fat (Nokia)",%,22.693
+2017-10-31,"Blood Glucose",mg/dL,93.0
+2017-10-31,"Weight (Nokia)",lbs,191.877
+2017-10-31,"Body Fat (Nokia)",%,21.899
+2017-11-1,"Weight (Nokia)",lbs,190.643
+2017-11-1,"Body Fat (Nokia)",%,23.163
+2017-11-1,"Blood Glucose",mg/dL,65.0
+2017-11-1,"Blood Glucose",mg/dL,85.0
+2017-11-1,"Blood Glucose",mg/dL,75.0
+2017-11-1,"Blood Glucose",mg/dL,86.0
+2017-11-2,"Body Temperature",°F,96.7
+2017-11-2,"Weight (Nokia)",lbs,190.402
+2017-11-2,"Body Fat (Nokia)",%,22.324
+2017-11-2,"Blood Glucose",mg/dL,96.0
+2017-11-3,"Weight (Nokia)",lbs,188.835
+2017-11-3,"Body Fat (Nokia)",%,24.4
+2017-11-3,"Blood Glucose",mg/dL,85.0
+2017-11-4,"Weight (Nokia)",lbs,187.195
+2017-11-4,"Body Fat (Nokia)",%,23.896
+2017-11-4,"Weight (Nokia)",lbs,187.177
+2017-11-4,"Body Fat (Nokia)",%,24.157
+2017-11-5,"Weight (Nokia)",lbs,187.761
+2017-11-5,"Body Fat (Nokia)",%,25.28
+2017-11-5,"Ketones (Breath)",ppm,18.0
+2017-11-5,"Pulse",bpm,60.0
+2017-11-5,"Weight (Nokia)",lbs,188.138
+2017-11-5,"Body Fat (Nokia)",%,22.909
+2017-11-6,"Body Temperature",°F,96.9
+2017-11-6,"Blood Glucose",mg/dL,91.0
+2017-11-6,"Blood Glucose",mg/dL,94.0
+2017-11-6,"Blood Glucose",mg/dL,77.0
+2017-11-6,"Weight (Nokia)",lbs,188.266
+2017-11-6,"Body Fat (Nokia)",%,23.701
+2017-11-7,"Weight (Nokia)",lbs,188.581
+2017-11-7,"Body Fat (Nokia)",%,22.048
+2017-11-7,"Blood Glucose",mg/dL,98.0
+2017-11-7,"Blood Glucose",mg/dL,94.0
+2017-11-7,"Weight (Nokia)",lbs,189.093
+2017-11-7,"Body Fat (Nokia)",%,24.029
+2017-11-8,"Blood Glucose",mg/dL,107.0
+2017-11-8,"Blood Glucose",mg/dL,62.0
+2017-11-8,"Weight (Nokia)",lbs,186.978
+2017-11-8,"Body Fat (Nokia)",%,22.827
+2017-11-8,"Blood Glucose",mg/dL,77.0
+2017-11-8,"Blood Glucose",mg/dL,84.0
+2017-11-9,"Body Temperature",°F,98.0
+2017-11-9,"Weight (Nokia)",lbs,186.588
+2017-11-9,"Body Fat (Nokia)",%,22.993
+2017-11-10,"Weight (Nokia)",lbs,185.041
+2017-11-10,"Body Fat (Nokia)",%,22.792
+2017-11-10,"Weight (Nokia)",lbs,185.746
+2017-11-10,"Body Fat (Nokia)",%,22.088
+2017-11-11,"Weight (Nokia)",lbs,184.267
+2017-11-11,"Body Fat (Nokia)",%,23.51
+2017-11-11,"Body Temperature",°F,98.0
+2017-11-12,"Weight (Nokia)",lbs,184.293
+2017-11-12,"Body Fat (Nokia)",%,24.296
+2017-11-13,"Blood Glucose",mg/dL,101.0
+2017-11-13,"Blood Glucose",mg/dL,88.0
+2017-11-13,"Weight (Nokia)",lbs,188.608
+2017-11-13,"Body Fat (Nokia)",%,23.086
+2017-11-13,"Weight (Nokia)",lbs,188.722
+2017-11-13,"Weight (Nokia)",lbs,188.639
+2017-11-14,"Weight (Nokia)",lbs,186.161
+2017-11-14,"Body Fat (Nokia)",%,17.93
+2017-11-14,"Blood Glucose",mg/dL,85.0
+2017-11-14,"Blood Glucose",mg/dL,79.0
+2017-11-14,"Weight (Nokia)",lbs,185.512
+2017-11-14,"Body Fat (Nokia)",%,21.142
+2017-11-15,"Blood Glucose",mg/dL,95.0
+2017-11-15,"Weight (Nokia)",lbs,182.355
+2017-11-15,"Body Fat (Nokia)",%,21.628
+2017-11-16,"Weight (Nokia)",lbs,180.922
+2017-11-16,"Body Fat (Nokia)",%,21.995
+2017-11-16,"Diastolic Blood Pressure",mmHg,88.0
+2017-11-17,"Weight (Nokia)",lbs,180.616
+2017-11-17,"Body Fat (Nokia)",%,22.41
+2017-11-17,"Body Temperature",°F,98.1
+2017-11-17,"Ketones (Breath)",ppm,11.6
+2017-11-18,"Weight (Nokia)",lbs,180.435
+2017-11-18,"Body Fat (Nokia)",%,22.164
+2017-11-18,"Weight (Nokia)",lbs,179.648
+2017-11-18,"Body Fat (Nokia)",%,22.188
+2017-11-19,"Weight (Nokia)",lbs,181.291
+2017-11-19,"Body Fat (Nokia)",%,21.306
+2017-11-20,"Weight (Nokia)",lbs,183.043
+2017-11-20,"Body Fat (Nokia)",%,20.849
+2017-11-20,"Weight (Nokia)",lbs,183.248
+2017-11-20,"Body Fat (Nokia)",%,22.317
+2017-11-21,"Blood Glucose",mg/dL,90.0
+2017-11-21,"Weight (Nokia)",lbs,180.523
+2017-11-21,"Body Fat (Nokia)",%,21.995
+2017-11-22,"Blood Glucose",mg/dL,93.0
+2017-11-22,"Weight (Nokia)",lbs,180.651
+2017-11-22,"Body Fat (Nokia)",%,22.809
+2017-11-23,"Weight (Nokia)",lbs,181.185
+2017-11-23,"Body Fat (Nokia)",%,22.717
+2017-11-24,"Weight (Nokia)",lbs,181.249
+2017-11-24,"Body Fat (Nokia)",%,22.636
+2017-11-25,"Weight (Nokia)",lbs,181.956
+2017-11-25,"Body Fat (Nokia)",%,22.924
+2017-11-25,"Ketones (Breath)",ppm,21.6
+2017-11-26,"Weight (Nokia)",lbs,184.412
+2017-11-26,"Body Fat (Nokia)",%,23.659
+2017-11-27,"Weight (Nokia)",lbs,185.316
+2017-11-27,"Body Fat (Nokia)",%,22.663
+2017-11-27,"Blood Glucose",mg/dL,99.0
+2017-11-28,"Weight (Nokia)",lbs,184.265
+2017-11-28,"Body Fat (Nokia)",%,22.541
+2017-11-29,"Weight (Nokia)",lbs,182.036
+2017-11-29,"Body Fat (Nokia)",%,22.357
+2017-11-29,"Blood Glucose",mg/dL,119.0
+2017-11-30,"Weight (Nokia)",lbs,181.632
+2017-11-30,"Body Fat (Nokia)",%,22.297
+2017-11-30,"Blood Glucose",mg/dL,98.0
+2017-12-1,"Weight (Nokia)",lbs,182.798
+2017-12-1,"Body Fat (Nokia)",%,22.42
+2017-12-2,"Blood Glucose",mg/dL,85.0
+2017-12-2,"Weight (Nokia)",lbs,182.838
+2017-12-2,"Body Fat (Nokia)",%,22.126
+2017-12-3,"Weight (Nokia)",lbs,183.032
+2017-12-3,"Body Fat (Nokia)",%,22.223
+2017-12-4,"Blood Glucose",mg/dL,93.0
+2017-12-4,"Weight (Nokia)",lbs,183.059
+2017-12-4,"Body Fat (Nokia)",%,22.485
+2017-12-5,"Blood Glucose",mg/dL,92.0
+2017-12-5,"Weight (Nokia)",lbs,183.971
+2017-12-5,"Body Fat (Nokia)",%,21.75
+2017-12-5,"Weight (Nokia)",lbs,183.879
+2017-12-5,"Body Fat (Nokia)",%,21.018
+2017-12-5,"Blood Glucose",mg/dL,87.0
+2017-12-6,"Blood Glucose",mg/dL,80.0
+2017-12-6,"Ketones (Urine)",mmol/L,4.0
+2017-12-6,"Weight (Nokia)",lbs,183.389
+2017-12-6,"Body Fat (Nokia)",%,21.555
+2017-12-7,"Weight (Nokia)",lbs,182.287
+2017-12-7,"Body Fat (Nokia)",%,20.524
+2017-12-8,"Weight (Nokia)",lbs,181.634
+2017-12-8,"Body Fat (Nokia)",%,21.205
+2017-12-8,"Weight (Nokia)",lbs,181.837
+2017-12-8,"Body Fat (Nokia)",%,20.611
+2017-12-8,"Ketones (Breath)",ppm,6.9
+2017-12-9,"Blood Glucose",mg/dL,76.0
+2017-12-9,"Weight (Nokia)",lbs,182.324
+2017-12-9,"Body Fat (Nokia)",%,20.979
+2017-12-10,"Weight (Nokia)",lbs,180.001
+2017-12-10,"Body Fat (Nokia)",%,21.862
+2017-12-10,"Blood Glucose",mg/dL,77.0
+2017-12-11,"Weight (Nokia)",lbs,180.667
+2017-12-11,"Body Fat (Nokia)",%,21.55
+2017-12-11,"Weight (Nokia)",lbs,180.292
+2017-12-11,"Body Fat (Nokia)",%,22.182
+2017-12-12,"Weight (Nokia)",lbs,183.303
+2017-12-12,"Body Fat (Nokia)",%,20.927
+2017-12-12,"Weight (Nokia)",lbs,183.239
+2017-12-13,"Weight (Nokia)",lbs,182.496
+2017-12-13,"Body Fat (Nokia)",%,19.063
+2017-12-13,"Weight (Nokia)",lbs,182.543
+2017-12-13,"Body Fat (Nokia)",%,19.529
+2017-12-14,"Weight (Nokia)",lbs,183.731
+2017-12-14,"Body Fat (Nokia)",%,19.751
+2017-12-14,"Weight (Nokia)",lbs,183.751
+2017-12-14,"Body Fat (Nokia)",%,19.557
+2017-12-15,"Weight (Nokia)",lbs,179.278
+2017-12-15,"Body Fat (Nokia)",%,17.524
+2017-12-15,"Weight (Nokia)",lbs,179.822
+2017-12-15,"Body Fat (Nokia)",%,16.576
+2017-12-15,"Ketones (Urine)",mmol/L,8.0
+2017-12-16,"Weight (Nokia)",lbs,178.548
+2017-12-16,"Body Fat (Nokia)",%,19.423
+2017-12-16,"Weight (Nokia)",lbs,178.061
+2017-12-16,"Body Fat (Nokia)",%,20.578
+2017-12-17,"Weight (Nokia)",lbs,181.471
+2017-12-17,"Weight (Nokia)",lbs,181.471
+2017-12-17,"Body Fat (Nokia)",%,20.677
+2017-12-17,"Body Fat (Nokia)",%,20.677
+2017-12-17,"Weight (Nokia)",lbs,182.585
+2017-12-17,"Weight (Nokia)",lbs,182.585
+2017-12-17,"Body Fat (Nokia)",%,20.297
+2017-12-17,"Body Fat (Nokia)",%,20.297
+2017-12-17,"Weight (Nokia)",lbs,183.802
+2017-12-17,"Weight (Nokia)",lbs,183.63
+2017-12-17,"Body Fat (Nokia)",%,18.249
+2017-12-18,"Weight (Nokia)",lbs,180.977
+2017-12-18,"Body Fat (Nokia)",%,20.697
+2017-12-18,"Weight (Nokia)",lbs,180.744
+2017-12-18,"Body Fat (Nokia)",%,21.919
+2017-12-18,"Blood Glucose",mg/dL,111.0
+2017-12-19,"Weight (Nokia)",lbs,181.346
+2017-12-19,"Body Fat (Nokia)",%,21.238
+2017-12-19,"Weight (Nokia)",lbs,182.699
+2017-12-19,"Body Fat (Nokia)",%,19.259
+2017-12-19,"Weight (Nokia)",lbs,181.176
+2017-12-19,"Body Fat (Nokia)",%,20.65
+2017-12-19,"Blood Glucose",mg/dL,108.0
+2017-12-20,"Weight (Nokia)",lbs,179.007
+2017-12-20,"Body Fat (Nokia)",%,22.119
+2017-12-20,"Weight (Nokia)",lbs,179.644
+2017-12-20,"Body Fat (Nokia)",%,21.427
+2017-12-20,"Blood Glucose",mg/dL,121.0
+2017-12-20,"Blood Glucose",mg/dL,107.0
+2017-12-21,"Weight (Nokia)",lbs,178.632
+2017-12-21,"Weight (Nokia)",lbs,178.259
+2017-12-21,"Body Fat (Nokia)",%,21.297
+2017-12-21,"Blood Glucose",mg/dL,110.0
+2017-12-21,"Blood Glucose",mg/dL,104.0
+2017-12-21,"Weight (Nokia)",lbs,178.832
+2017-12-22,"Weight (Nokia)",lbs,176.103
+2017-12-22,"Body Fat (Nokia)",%,21.958
+2017-12-22,"Weight (Nokia)",lbs,176.544
+2017-12-22,"Body Fat (Nokia)",%,21.341
+2017-12-23,"Weight (Nokia)",lbs,178.967
+2017-12-23,"Body Fat (Nokia)",%,21.631
+2017-12-24,"Weight (Nokia)",lbs,179.439
+2017-12-24,"Body Fat (Nokia)",%,22.054
+2017-12-24,"Weight (Nokia)",lbs,180.933
+2017-12-24,"Body Fat (Nokia)",%,22.164
+2017-12-25,"Weight (Nokia)",lbs,179.095
+2017-12-25,"Body Fat (Nokia)",%,22.478
+2017-12-26,"Weight (Nokia)",lbs,180.537
+2017-12-26,"Body Fat (Nokia)",%,22.152
+2017-12-26,"Blood Glucose",mg/dL,106.0
+2017-12-27,"Weight (Nokia)",lbs,178.017
+2017-12-27,"Body Fat (Nokia)",%,23.221
+2017-12-27,"Blood Glucose",mg/dL,101.0
+2017-12-27,"Weight (Nokia)",lbs,177.957
+2017-12-27,"Body Fat (Nokia)",%,21.593
+2017-12-28,"Weight (Nokia)",lbs,179.816
+2017-12-28,"Body Fat (Nokia)",%,20.843
+2017-12-28,"Blood Glucose",mg/dL,109.0
+2017-12-28,"Weight (Nokia)",lbs,180.356
+2017-12-28,"Body Fat (Nokia)",%,21.709
+2017-12-29,"Weight (Nokia)",lbs,178.281
+2017-12-29,"Body Fat (Nokia)",%,22.494
+2017-12-29,"Weight (Nokia)",lbs,180.988
+2017-12-29,"Body Fat (Nokia)",%,19.319
+2017-12-29,"Weight (Nokia)",lbs,180.812
+2017-12-29,"Body Fat (Nokia)",%,20.118
+2017-12-30,"Weight (Nokia)",lbs,178.098
+2017-12-30,"Body Fat (Nokia)",%,20.016
+2017-12-30,"Weight (Nokia)",lbs,178.391
+2017-12-30,"Body Fat (Nokia)",%,21.528
+2017-12-31,"Weight (Nokia)",lbs,181.709
+2017-12-31,"Body Fat (Nokia)",%,21.281
+2017-12-31,"Weight (Nokia)",lbs,182.364
+2017-12-31,"Body Fat (Nokia)",%,20.298
+2018-1-1,"Weight (Nokia)",lbs,178.865
+2018-1-1,"Body Fat (Nokia)",%,22.174
+2018-1-1,"Weight (Nokia)",lbs,180.226
+2018-1-1,"Body Fat (Nokia)",%,21.725
+2018-1-2,"Weight (Nokia)",lbs,178.178
+2018-1-2,"Body Fat (Nokia)",%,22.086
+2018-1-2,"Weight (Nokia)",lbs,178.319
+2018-1-2,"Body Fat (Nokia)",%,20.981
+2018-1-2,"Weight (Nokia)",lbs,180.819
+2018-1-2,"Body Fat (Nokia)",%,18.642
+2018-1-3,"Weight (Nokia)",lbs,179.004
+2018-1-3,"Body Fat (Nokia)",%,21.356
+2018-1-3,"Blood Glucose",mg/dL,110.0
+2018-1-3,"Weight (Nokia)",lbs,180.303
+2018-1-3,"Body Fat (Nokia)",%,17.693
+2018-1-4,"Weight (Nokia)",lbs,177.849
+2018-1-4,"Body Fat (Nokia)",%,20.206
+2018-1-4,"Blood Glucose",mg/dL,99.0
+2018-1-4,"Weight (Nokia)",lbs,177.205
+2018-1-4,"Body Fat (Nokia)",%,21.735
+2018-1-5,"Blood Glucose",mg/dL,123.0
+2018-1-5,"Weight (Nokia)",lbs,175.708
+2018-1-5,"Body Fat (Nokia)",%,21.317
+2018-1-6,"Weight (Nokia)",lbs,178.561
+2018-1-7,"Weight (Nokia)",lbs,177.73
+2018-1-7,"Body Fat (Nokia)",%,21.075
+2018-1-7,"Weight (Nokia)",lbs,178.572
+2018-1-7,"Body Fat (Nokia)",%,20.63
+2018-1-8,"Weight (Nokia)",lbs,178.533
+2018-1-8,"Body Fat (Nokia)",%,21.141
+2018-1-8,"Blood Glucose",mg/dL,123.0
+2018-1-8,"Diastolic Blood Pressure",mmHg,100.0
+2018-1-8,"Weight (Nokia)",lbs,177.951
+2018-1-8,"Body Fat (Nokia)",%,21.557
+2018-1-9,"Weight (Nokia)",lbs,178.44
+2018-1-9,"Body Fat (Nokia)",%,20.497
+2018-1-9,"Blood Glucose",mg/dL,81.0
+2018-1-9,"Blood Glucose",mg/dL,87.0
+2018-1-10,"Weight (Nokia)",lbs,177.565
+2018-1-10,"Body Fat (Nokia)",%,21.306
+2018-1-10,"Blood Glucose",mg/dL,114.0
+2018-1-10,"Weight (Nokia)",lbs,177.322
+2018-1-10,"Body Fat (Nokia)",%,21.857
+2018-1-10,"Weight (Nokia)",lbs,177.441
+2018-1-10,"Body Fat (Nokia)",%,20.525
+2018-1-11,"Blood Glucose",mg/dL,103.0
+2018-1-11,"Blood Glucose",mg/dL,100.0
+2018-1-11,"Blood Glucose",mg/dL,109.0
+2018-1-11,"Body Fat (Nokia)",%,21.305
+2018-1-11,"Weight (Nokia)",lbs,175.497
+2018-1-12,"Weight (Nokia)",lbs,175.576
+2018-1-12,"Body Fat (Nokia)",%,21.095
+2018-1-13,"Weight (Nokia)",lbs,175.801
+2018-1-13,"Weight (Nokia)",lbs,175.779
+2018-1-13,"Body Fat (Nokia)",%,20.23
+2018-1-14,"Weight (Nokia)",lbs,177.97
+2018-1-14,"Body Fat (Nokia)",%,20.947
+2018-1-15,"Blood Glucose",mg/dL,112.0
+2018-1-15,"Blood Glucose",mg/dL,100.0
+2018-1-15,"Weight (Nokia)",lbs,180.561
+2018-1-15,"Body Fat (Nokia)",%,22.075
+2018-1-16,"Blood Glucose",mg/dL,102.0
+2018-1-16,"Blood Glucose",mg/dL,104.0
+2018-1-16,"Weight (Nokia)",lbs,178.87
+2018-1-16,"Body Fat (Nokia)",%,20.941
+2018-1-17,"Blood Glucose",mg/dL,124.0
+2018-1-17,"Weight (Nokia)",lbs,178.588
+2018-1-17,"Body Fat (Nokia)",%,21.492
+2018-1-17,"Blood Glucose",mg/dL,124.0
+2018-1-19,"Blood Glucose",mg/dL,93.0
+2018-1-19,"Weight (Nokia)",lbs,178.735
+2018-1-19,"Body Fat (Nokia)",%,17.897
+2018-1-19,"Blood Glucose",mg/dL,93.0
+2018-1-20,"Weight (Nokia)",lbs,177.47
+2018-1-20,"Weight (Nokia)",lbs,177.849
+2018-1-20,"Body Fat (Nokia)",%,19.685
+2018-1-20,"Body Fat (Nokia)",%,18.366
+2018-1-21,"Weight (Nokia)",lbs,180.501
+2018-1-21,"Body Fat (Nokia)",%,19.811
+2018-1-21,"Weight (Nokia)",lbs,177.346
+2018-1-21,"Body Fat (Nokia)",%,20.449
+2018-1-22,"Weight (Nokia)",lbs,177.36
+2018-1-22,"Body Fat (Nokia)",%,19.515
+2018-1-23,"Body Fat (Nokia)",%,17.953
+2018-1-23,"Weight (Nokia)",lbs,176.491
+2018-1-23,"Body Fat (Nokia)",%,20.698
+2018-1-23,"Blood Glucose",mg/dL,106.0
+2018-1-23,"Blood Glucose",mg/dL,102.0
+2018-1-24,"Body Fat (Nokia)",%,20.567
+2018-1-24,"Weight (Nokia)",lbs,176.866
+2018-1-25,"Weight (Nokia)",lbs,176.068
+2018-1-26,"Weight (Nokia)",lbs,175.724
+2018-1-27,"Weight (Nokia)",lbs,176.125
+2018-1-28,"Weight (Nokia)",lbs,175.29
+2018-1-29,"Weight (Nokia)",lbs,178.638
+2018-1-29,"Body Fat (Nokia)",%,20.412
+2018-1-29,"Weight (Nokia)",lbs,177.939
+2018-1-29,"Body Fat (Nokia)",%,20.84
+2018-1-29,"Blood Glucose",mg/dL,103.0
+2018-1-29,"Blood Glucose",mg/dL,95.0
+2018-1-30,"Weight (Nokia)",lbs,176.939
+2018-1-30,"Body Fat (Nokia)",%,20.447
+2018-1-31,"Weight (Nokia)",lbs,176.623
+2018-1-31,"Body Fat (Nokia)",%,20.595
+2018-2-1,"Weight (Nokia)",lbs,177.208
+2018-2-1,"Body Fat (Nokia)",%,20.702
+2018-2-2,"Weight (Nokia)",lbs,176.8
+2018-2-2,"Body Fat (Nokia)",%,20.5
+2018-2-3,"Weight (Nokia)",lbs,175.387
+2018-2-3,"Body Fat (Nokia)",%,19.119
+2018-2-4,"Weight (Nokia)",lbs,176.729
+2018-2-4,"Body Fat (Nokia)",%,20.533
+2018-2-5,"Blood Glucose",mg/dL,121.0
+2018-2-5,"Weight (Nokia)",lbs,176.606
+2018-2-5,"Body Fat (Nokia)",%,21.933
+2018-2-6,"Weight (Nokia)",lbs,175.466
+2018-2-6,"Body Fat (Nokia)",%,19.651
+2018-2-7,"Blood Glucose",mg/dL,111.0
+2018-2-7,"Weight (Nokia)",lbs,177.022
+2018-2-7,"Body Fat (Nokia)",%,19.814
+2018-2-8,"Weight (Nokia)",lbs,176.2
+2018-2-8,"Body Fat (Nokia)",%,20.382
+2018-2-9,"Weight (Nokia)",lbs,174.167
+2018-2-9,"Body Fat (Nokia)",%,21.114
+2018-2-10,"Weight (Nokia)",lbs,176.326
+2018-2-10,"Body Fat (Nokia)",%,20.018
+2018-2-11,"Weight (Nokia)",lbs,176.156
+2018-2-11,"Body Fat (Nokia)",%,21.401
+2018-2-12,"Blood Glucose",mg/dL,109.0
+2018-2-12,"Weight (Nokia)",lbs,177.287
+2018-2-12,"Body Fat (Nokia)",%,21.575
+2018-2-13,"Blood Glucose",mg/dL,120.0
+2018-2-13,"Blood Glucose",mg/dL,113.0
+2018-2-13,"Weight (Nokia)",lbs,174.588
+2018-2-13,"Body Fat (Nokia)",%,20.558
+2018-2-14,"Blood Glucose",mg/dL,96.0
+2018-2-14,"Weight (Nokia)",lbs,174.148
+2018-2-14,"Body Fat (Nokia)",%,20.622
+2018-2-15,"Blood Glucose",mg/dL,94.0
+2018-2-15,"Weight (Nokia)",lbs,174.494
+2018-2-15,"Body Fat (Nokia)",%,19.091
+2018-2-16,"Weight (Nokia)",lbs,174.652
+2018-2-16,"Body Fat (Nokia)",%,18.997
+2018-2-17,"Weight (Nokia)",lbs,177.626
+2018-2-17,"Body Fat (Nokia)",%,19.039
+2018-2-18,"Weight (Nokia)",lbs,175.124
+2018-2-18,"Body Fat (Nokia)",%,19.022
+2018-2-19,"Weight (Nokia)",lbs,173.623
+2018-2-19,"Body Fat (Nokia)",%,20.57
+2018-2-20,"Blood Glucose",mg/dL,113.0
+2018-2-20,"Weight (Nokia)",lbs,172.626
+2018-2-20,"Body Fat (Nokia)",%,18.761
+2018-2-21,"Blood Glucose",mg/dL,113.0
+2018-2-21,"Weight (Nokia)",lbs,175.245
+2018-2-21,"Body Fat (Nokia)",%,15.738
+2018-2-21,"Weight (Nokia)",lbs,173.616
+2018-2-21,"Body Fat (Nokia)",%,19.403
+2018-2-22,"Weight (Nokia)",lbs,172.776
+2018-2-22,"Body Fat (Nokia)",%,19.714
+2018-2-22,"Blood Glucose",mg/dL,112.0
+2018-2-22,"Blood Glucose",mg/dL,94.0
+2018-2-23,"Weight (Nokia)",lbs,173.003
+2018-2-23,"Body Fat (Nokia)",%,19.994
+2018-2-24,"Weight (Nokia)",lbs,172.551
+2018-2-24,"Body Fat (Nokia)",%,21.369
+2018-2-25,"Weight (Nokia)",lbs,172.086
+2018-2-25,"Body Fat (Nokia)",%,20.267
+2018-2-26,"Blood Glucose",mg/dL,113.0
+2018-2-26,"Weight (Nokia)",lbs,173.707
+2018-2-26,"Body Fat (Nokia)",%,20.104
+2018-2-27,"Weight (Nokia)",lbs,173.943
+2018-2-27,"Body Fat (Nokia)",%,18.961
+2018-2-27,"Blood Glucose",mg/dL,88.0
+2018-2-27,"Blood Glucose",mg/dL,91.0
+2018-2-28,"Weight (Nokia)",lbs,173.429
+2018-2-28,"Body Fat (Nokia)",%,19.576
+2018-2-28,"Blood Glucose",mg/dL,98.0
+2018-3-1,"Blood Glucose",mg/dL,107.0
+2018-3-1,"Weight (Nokia)",lbs,172.644
+2018-3-1,"Body Fat (Nokia)",%,20.559
+2018-3-2,"Weight (Nokia)",lbs,172.944
+2018-3-2,"Body Fat (Nokia)",%,20.728
+2018-3-3,"Weight (Nokia)",lbs,177.79
+2018-3-3,"Body Fat (Nokia)",%,19.257
+2018-3-4,"Weight (Nokia)",lbs,179.441
+2018-3-4,"Body Fat (Nokia)",%,18.355
+2018-3-5,"Weight (Nokia)",lbs,175.096
+2018-3-5,"Body Fat (Nokia)",%,19.063
+2018-3-6,"Weight (Nokia)",lbs,172.829
+2018-3-6,"Body Fat (Nokia)",%,19.16
+2018-3-6,"Blood Glucose",mg/dL,109.0
+2018-3-7,"Weight (Nokia)",lbs,172.005
+2018-3-7,"Body Fat (Nokia)",%,20.161
+2018-3-7,"Blood Glucose",mg/dL,84.0
+2018-3-8,"Weight (Nokia)",lbs,172.909
+2018-3-8,"Body Fat (Nokia)",%,19.929
+2018-3-8,"Blood Glucose",mg/dL,117.0
+2018-3-8,"Blood Glucose",mg/dL,101.0
+2018-3-9,"Weight (Nokia)",lbs,174.771
+2018-3-9,"Body Fat (Nokia)",%,19.804
+2018-3-10,"Weight (Nokia)",lbs,173.579
+2018-3-10,"Body Fat (Nokia)",%,21.223
+2018-3-11,"Weight (Nokia)",lbs,176.489
+2018-3-11,"Body Fat (Nokia)",%,19.787
+2018-3-12,"Weight (Nokia)",lbs,177.845
+2018-3-12,"Body Fat (Nokia)",%,19.648
+2018-3-12,"Weight (Nokia)",lbs,177.8
+2018-3-12,"Blood Glucose",mg/dL,117.0
+2018-3-13,"Weight (Nokia)",lbs,174.108
+2018-3-13,"Body Fat (Nokia)",%,20.209
+2018-3-14,"Weight (Nokia)",lbs,175.177
+2018-3-14,"Body Fat (Nokia)",%,19.545
+2018-3-15,"Weight (Nokia)",lbs,173.64
+2018-3-15,"Body Fat (Nokia)",%,18.842
+2018-3-16,"Weight (Nokia)",lbs,171.019
+2018-3-16,"Body Fat (Nokia)",%,19.427
+2018-3-17,"Weight (Nokia)",lbs,170.514
+2018-3-17,"Body Fat (Nokia)",%,19.071
+2018-3-18,"Weight (Nokia)",lbs,171.015
+2018-3-18,"Body Fat (Nokia)",%,20.626
+2018-3-19,"Weight (Nokia)",lbs,170.115
+2018-3-19,"Body Fat (Nokia)",%,20.036
+2018-3-20,"Weight (Nokia)",lbs,170.109
+2018-3-20,"Body Fat (Nokia)",%,19.984
+2018-3-21,"Weight (Nokia)",lbs,169.196
+2018-3-21,"Body Fat (Nokia)",%,20.653
+2018-3-22,"Weight (Nokia)",lbs,168.089
+2018-3-22,"Body Fat (Nokia)",%,19.988
+2018-3-23,"Weight (Nokia)",lbs,169.282
+2018-3-23,"Body Fat (Nokia)",%,19.756
+2018-3-24,"Weight (Nokia)",lbs,171.147
+2018-3-24,"Body Fat (Nokia)",%,18.485
+2018-3-24,"Body Temperature",°F,97.6
+2018-3-25,"Weight (Nokia)",lbs,168.462
+2018-3-25,"Body Fat (Nokia)",%,19.355
+2018-3-25,"Body Temperature",°F,97.8
+2018-3-26,"Weight (Nokia)",lbs,169.655
+2018-3-26,"Body Fat (Nokia)",%,19.323
+2018-3-26,"Body Temperature",°F,97.7
+2018-3-27,"Weight (Nokia)",lbs,168.519
+2018-3-27,"Body Fat (Nokia)",%,18.799
+2018-3-28,"Blood Glucose",mg/dL,110.0
+2018-3-28,"Weight (Nokia)",lbs,167.282
+2018-3-28,"Weight (Nokia)",lbs,167.143
+2018-3-28,"Body Fat (Nokia)",%,18.07
+2018-3-28,"Weight (Nokia)",lbs,168.473
+2018-3-28,"Body Fat (Nokia)",%,16.894
+2018-3-28,"Weight (Nokia)",lbs,168.27
+2018-3-28,"Body Fat (Nokia)",%,16.194
+2018-3-29,"Weight (Nokia)",lbs,168.907
+2018-3-29,"Body Fat (Nokia)",%,16.916
+2018-3-29,"Weight",lbs,166.1
+2018-3-30,"Weight (Nokia)",lbs,166.636
+2018-3-30,"Body Fat (Nokia)",%,18.774
+2018-3-30,"Weight (Nokia)",lbs,166.345
+2018-3-30,"Body Fat (Nokia)",%,18.21
+2018-3-31,"Weight (Nokia)",lbs,167.752
+2018-3-31,"Body Fat (Nokia)",%,19.201
+2018-4-1,"Weight (Nokia)",lbs,171.057
+2018-4-1,"Body Fat (Nokia)",%,19.526
+2018-4-2,"Blood Glucose",mg/dL,114.0
+2018-4-2,"Weight (Nokia)",lbs,172.375
+2018-4-2,"Body Fat (Nokia)",%,19.402
+2018-4-3,"Weight (Nokia)",lbs,172.882
+2018-4-3,"Body Fat (Nokia)",%,18.567
+2018-4-4,"Blood Glucose",mg/dL,88.0
+2018-4-4,"Blood Glucose",mg/dL,110.0
+2018-4-4,"Weight (Nokia)",lbs,171.579
+2018-4-4,"Body Fat (Nokia)",%,17.95
+2018-4-5,"Weight (Nokia)",lbs,170.391
+2018-4-5,"Body Fat (Nokia)",%,18.67
+2018-4-6,"Weight (Nokia)",lbs,169.035
+2018-4-6,"Body Fat (Nokia)",%,19.355
+2018-4-7,"Weight (Nokia)",lbs,167.99
+2018-4-7,"Body Fat (Nokia)",%,19.397
+2018-4-8,"Weight (Nokia)",lbs,167.582
+2018-4-8,"Body Fat (Nokia)",%,19.681
+2018-4-9,"Weight (Nokia)",lbs,171.03
+2018-4-9,"Body Fat (Nokia)",%,20.083
+2018-4-10,"Weight (Nokia)",lbs,171.257
+2018-4-10,"Body Fat (Nokia)",%,19.451
+2018-4-10,"Blood Glucose",mg/dL,113.0
+2018-4-10,"Blood Glucose",mg/dL,118.0
+2018-4-11,"Weight (Nokia)",lbs,168.504
+2018-4-11,"Body Fat (Nokia)",%,19.246
+2018-4-12,"Weight (Nokia)",lbs,168.319
+2018-4-12,"Body Fat (Nokia)",%,19.071
+2018-4-13,"Weight (Nokia)",lbs,169.615
+2018-4-13,"Body Fat (Nokia)",%,18.223
+2018-4-14,"Weight (Nokia)",lbs,168.991
+2018-4-14,"Body Fat (Nokia)",%,15.785
+2018-4-15,"Weight (Nokia)",lbs,168.786
+2018-4-15,"Body Fat (Nokia)",%,19.083
+2018-4-16,"Weight (Nokia)",lbs,169.121
+2018-4-16,"Body Fat (Nokia)",%,19.137
+2018-4-17,"Weight (Nokia)",lbs,168.18
+2018-4-17,"Body Fat (Nokia)",%,18.011
+2018-4-18,"Weight (Nokia)",lbs,166.996
+2018-4-18,"Body Fat (Nokia)",%,18.469
+2018-4-19,"Weight (Nokia)",lbs,165.265
+2018-4-19,"Body Fat (Nokia)",%,19.049
