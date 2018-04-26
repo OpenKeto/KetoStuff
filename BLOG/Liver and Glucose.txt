@@ -1,0 +1,30 @@
+http://www.diabetesforecast.org/2012/feb/the-liver-s-role-how-it-processes-fats-and-carbs.html
+
+When levels of glucose (and consequently insulin) are high in the blood, 
+the liver responds to the insulin by absorbing glucose. 
+It packages the sugar into bundles called glycogen. 
+These glucose granules fill up liver cells, so the liver is like a warehouse for excess glucose.
+
+When glucose levels drop, insulin production falls, too. 
+The shortage of insulin in the blood is the signal that the liver needs to liquidate its assets, 
+sending its glucose stores back into the blood to keep the body well fed between meals and overnight.
+
+The liver doles out stored glucose and has the singular ability to make glucose from scratch. 
+This is a critical function that keeps people alive when food is scarce. 
+In people with diabetes, however, the liver doesn't process and produce glucose normally, 
+adding to the challenge of blood glucose control.
+
+The liver can't directly detect blood glucose levels; it knows only what insulin tells it. 
+So, if there is a shortage of insulin or if the liver doesn't notice the insulin that's there, 
+the liver assumes that the body needs more glucose, even if blood glucose levels are already elevated. 
+
+Processing the body's fat is a key job for the liver. 
+Once the liver is full of glycogen, it starts turning the glucose it absorbs from the blood into fatty acids, 
+for long-term storage as body fat.
+
+All of this extra fat produced and stored by the liver can sometimes lead the liver itself to get fat. 
+One theory blames fatty liver for the development of insulin resistance in the liver. 
+An insulin-resistant liver ignores the hormone's signal to stop sending glucose to the blood.
+
+https://dtc.ucsf.edu/types-of-diabetes/type1/understanding-type-1-diabetes/how-the-body-processes-sugar/the-liver-blood-sugar/
+When you’re not eating, the liver supplies sugar by turning glycogen into glucose in a process called glycogenolysis.
