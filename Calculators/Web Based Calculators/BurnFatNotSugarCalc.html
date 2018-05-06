@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+<style>
+form {
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 20px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+</style>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function write_results(){
+		// Set up the paragraphs for the calculated results
+		var outResults_parra = document.getElementById('results');
+		var macros_parra = document.getElementById('DietaryMacros');
+		var currentWeightLbs = parseFloat(document.getElementById('weight').value);
+		// Initialize variables selected by activity level on the form
+		var energyRatio = 0.0;
+		if ( document.BSNFCalc.planSelected[0].checked ) // PSMF
+		{
+			energyRatio = 5.0;
+		}
+		if ( document.BSNFCalc.planSelected[1].checked ) // Fat Loss
+		{
+			energyRatio = 2.0;
+		}
+		if ( document.BSNFCalc.planSelected[2].checked ) // Maintenance
+		{
+			energyRatio = 1.0;
+		}
+		if ( document.BSNFCalc.planSelected[3].checked ) // Fat Gain
+		{
+			energyRatio = 0.4;
+		}
+		// Form the output string for the results
+		outResults_parra.innerHTML = "Current Weight: <b>";
+		outResults_parra.innerHTML += currentWeightLbs + "</b>";
+		outResults_parra.innerHTML += " lbs<br/>";
+		outResults_parra.innerHTML += "P:NPE Ratio: <b>";
+		outResults_parra.innerHTML += energyRatio + "</b><br/>";
+		var proteinNeed = currentWeightLbs; // 1g per lb of weight
+		outResults_parra.innerHTML += "Protein: <b>";
+		outResults_parra.innerHTML += Math.round(proteinNeed) + "g</b><br/>";
+		var carbsNeed = 20.0;
+		outResults_parra.innerHTML += "Carbs: <b>";
+		outResults_parra.innerHTML += carbsNeed + "g</b><br/>";
+		var fatNeed = (proteinNeed - carbsNeed) / energyRatio;
+		outResults_parra.innerHTML += "Fat: <b>";
+		outResults_parra.innerHTML += Math.round(fatNeed) + "g</b><br/>";
+	}
+	</script>
+</head>
+<body>
+<h1>Burn Fat Not Sugar Macros Calculator</h1>
+Based on <a target="_blank" href="http://burnfatnotsugar.com/MacroCalc.html">Burn Fat Not Sugar Macros Calculator</a>.
+<b>This calculator only works in Chrome or Firefox (not in IE).</b><p/>
+<b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
+<h2>Enter Your Numbers</h2>
+<form Name="BSNFCalc">
+    <div>
+        <label for="Weight">Weight :</label>
+        <input type="text" id="weight" name="user_weight" value="168.1"> lbs (without clothes)
+    </div>
+	<div>
+	Select your <a target=\"_blank\" href="https://ketogains.com/ketogains-calculator/" >Activity Level</a><br/>
+		<input type="radio" name="planSelected" value="PSMF"> PSMF<br>
+		<input type="radio" name="planSelected" value="FatLoss" checked> Fat Loss<br>
+		<input type="radio" name="planSelected" value="Maintenance"> Maintenance<br>
+		<input type="radio" name="planSelected" value="FatGain"> Fat Gain<br>
+    </div>
+<div class="button">
+  <input type="button" value="Calculate" onclick="write_results();"/>
+</div>
+</form>
+<i>Scroll down for results after pressing Calculate</i><p/>
+<hr/>
+<h2>Results</h2>
+<p id="results"></p>
+
+<p id="DietaryMacros"></p>
+<h2>PSMF</h2>
+This diet is a variant on the <a target="_blank" href="https://paleoleap.com/protein-sparing-modified-fasts/">Protein Sparing Modified Fast (PSMF)</a> diet.
+With this diet it is very important that you eat at least the protein amount.
+This preserves the most lean body mass possible and provides satiety.
+It is also important to eat at least the total number of calories.
+If you go below these numbers you risk lowering your metabolism and you actually can't lose body fat any faster.
+It is better to be slightly above these macros than below the macros.
+It is also OK to substitute additional protein for fat (as long as total calories are reached) but you may feel better with as much fat as possible.
+Don't forget that <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2804964/">Protein plus Insulin builds muscle.</a>
+<h2>Disclaimer</h2>
+Use this information at your own risk and with the advice of your medical professional. 
+We are not doctors nor do we pretend to be one on the Internet.
+We do not take responsibility for errors in these calculations.
+We do not guarantee that these numbers will work for people at the extremes of the ranges.
+If you discover an error in calculation, please let us know through email: keto at land-boards dot com.
+</body>
+</html>
