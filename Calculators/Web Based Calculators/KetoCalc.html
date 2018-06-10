@@ -294,6 +294,7 @@ button {
 		PsmfMacros_parra.innerHTML += " g (" + proteinCalsConstant.toFixed(1);
 		PsmfMacros_parra.innerHTML += " cals), " + (proteinCalsConstant*100/PsmfDietaryCals).toFixed(1);
 		PsmfMacros_parra.innerHTML += "% of calories<br/>";
+		PsmfMacros_parra.innerHTML += "It is best to eat several meals of 35-40 grams of protein per meal to maximize Muscle Protein Synthesis.<br/>";
 		PsmfMacros_parra.innerHTML += "Carbs: 20 g (80 cals), " + (8000/PsmfDietaryCals).toFixed(1);
 		PsmfMacros_parra.innerHTML += "% of calories (from leafy green vegetables)<br/>"
 		PsmfMacros_parra.innerHTML += "Fat: " +(netFatCals/9.0).toFixed(1);
@@ -416,7 +417,7 @@ button {
 <form Name="KetoCalc">
     <div>
         <label for="Age">Age:</label>
-        <input type="text" id="age" name="user_age" value="57" maxlength="6" autofocus>
+        <input type="text" id="age" name="user_age" value="58" maxlength="6" autofocus>
     </div>
 	<div>
 		<input type="radio" name="gender" value="male" checked> Male<br>
@@ -428,15 +429,15 @@ button {
     </div>
     <div>
         <label for="Weight">Weight :</label>
-        <input type="text" id="weight" name="user_weight" value="173.4"> lbs (without clothes)
+        <input type="text" id="weight" name="user_weight" value="165.0"> lbs (without clothes)
     </div>
     <div>
         <label for="Neck">Neck :</label>
-        <input type="text" id="neck" name="user_neck" value="15.0"> inches (smallest circumference)
+        <input type="text" id="neck" name="user_neck" value="14.5"> inches (smallest circumference)
     </div>
     <div>
         <label for="Waist">Waist :</label>
-        <input type="text" id="waist" name="user_waist" value="33.75"> inches (at your belly button)
+        <input type="text" id="waist" name="user_waist" value="32.0"> inches (at your belly button)
     </div>
     <div>
         <label for="Ankle">Ankle :</label>
@@ -460,8 +461,8 @@ button {
     </div>
 	<h2>Enter Your <a target=\"_blank\" href="https://ketogains.com/2015/09/how-to-estimate-your-body-fat-percentage-bf/">Goal Body Fat</h2></a>
     <div>
-        <label for="Body Fat">Body Fat (%):</label>
-        <input type="text" id="BodyFat" name="user_bodyfat" value="15">
+        <label for="Body Fat">Goal Body Fat (%):</label>
+        <input type="text" id="BodyFat" name="user_bodyfat" value="12">
     </div>
 <div class="button">
   <input type="button" value="Calculate" onclick="write_results();"/>
