@@ -60,6 +60,7 @@ button {
 		// Set up the paragraphs for the calculated results
 		var outResults_parra = document.getElementById('MAF_Results');
 		var c2Results_parra = document.getElementById('C2_Results');
+		var calc220Results_parra = document.getElementById('Calc220_Results');
 		var currentAge = parseFloat(document.getElementById('age').value);
 		var currentRHR = parseFloat(document.getElementById('rhr').value);
 		// Initialize variables selected by activity level on the form
@@ -125,7 +126,30 @@ button {
 		c2Results_parra.innerHTML += " - ";
 		c2Results_parra.innerHTML += Math.round((c2HRR*0.85) + currentRHR);
 		c2Results_parra.innerHTML += " bpm</b><br/>";
-		
+		calc220Results_parra.innerHTML = "Age: <b>";
+		calc220Results_parra.innerHTML += currentAge + "<br/>";
+		var hr220;
+		hr220 = 220.0 - currentAge;
+		calc220Results_parra.innerHTML = "Age: <b>";
+		calc220Results_parra.innerHTML += currentAge + "<br/>";
+		calc220Results_parra.innerHTML += "220 Method Max Heart Rate : <b>";
+		calc220Results_parra.innerHTML += hr220.toFixed(0);
+		calc220Results_parra.innerHTML += " bpm</b><br/>";
+		calc220Results_parra.innerHTML += "Max Heart Rate Range : <b>";
+		calc220Results_parra.innerHTML += (0.90 * hr220).toFixed(0);
+		calc220Results_parra.innerHTML += " - ";
+		calc220Results_parra.innerHTML += hr220.toFixed(0);
+		calc220Results_parra.innerHTML += " bpm</b><br/>";
+		calc220Results_parra.innerHTML += "Vigorous Heart Rate Range : <b>";
+		calc220Results_parra.innerHTML += (0.70 * hr220).toFixed(0);
+		calc220Results_parra.innerHTML += " - ";
+		calc220Results_parra.innerHTML += (0.90 * hr220).toFixed(0);
+		calc220Results_parra.innerHTML += " bpm</b><br/>";
+		calc220Results_parra.innerHTML += "Moderate Heart Rate Range : <b>";
+		calc220Results_parra.innerHTML += (0.50 * hr220).toFixed(0);
+		calc220Results_parra.innerHTML += " - ";
+		calc220Results_parra.innerHTML += (0.70 * hr220).toFixed(0);
+		calc220Results_parra.innerHTML += " bpm</b><br/>";
 	}
 	</script>
 </head>
@@ -179,6 +203,9 @@ Based on various calculators.
 These are based on the <a target="_blank" href="http://www.concept2.com/indoor-rowers/training/tips-and-general-info/training-heart-rate-range">Concept 2 Rower Training Heart Rate Range numbers</a>.
 <br/>Max HR based on (Inbar, O. Oten, A., Scheinowitz, M., Rotstein, A., Dlin, R. and Casaburi, R. Normal cardiopulmonary
 responses during incremental exercise in 20-70-yr-old men. Med Sci Sport Exerc 1994;26(5):538-546.)
+<h2>220 Minus Age Heart Rate Calculations</h2>
+<p id="Calc220_Results"><br/></p>
+
 <h2>Disclaimer</h2>
 Use this information at your own risk and with the advice of your medical professional. 
 We are not doctors nor do we pretend to be one on the Internet.
