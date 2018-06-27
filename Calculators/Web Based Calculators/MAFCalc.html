@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+<style>
+form {
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 20px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+</style>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function write_results(){
+		// Set up the paragraphs for the calculated results
+		var outResults_parra = document.getElementById('MAF_Results');
+		var currentAge = parseFloat(document.getElementById('age').value);
+		// Initialize variables selected by activity level on the form
+		var heartRate = 180.0;
+		var illnessOption = 0.0;
+		if ( document.Options.OptionSelected1[0].checked ) // Not Illness
+		{
+			illnessOption = 0.0;
+		}
+		if ( document.Options.OptionSelected1[1].checked ) // Yes - Illness
+		{
+			illnessOption = -5.0;
+		}
+		heartRate += illnessOption
+		var injuredOption = 0.0;
+		if ( document.Options.OptionSelected2[0].checked ) // No
+		{
+			injuredOption = 0.0;
+		}
+		heartRate += injuredOption
+		if ( document.Options.OptionSelected2[1].checked ) // Yes
+		{
+			injuredOption = -5.0;
+		}
+		var trained2YesOption = 0.0;
+		if ( document.Options.OptionSelected3[0].checked ) // No
+		{
+			trained2YesOption = 0.0;
+		}
+		if ( document.Options.OptionSelected3[1].checked ) // Yes
+		{
+			trained2YesOption = 5.0;
+		}
+		heartRate += trained2YesOption
+		// Form the output string for the results
+		outResults_parra.innerHTML = "Age: <b>";
+		outResults_parra.innerHTML += currentAge + "<br/>";
+		heartRate = heartRate - currentAge;
+		outResults_parra.innerHTML += "Training Heart Rate range : <b>";
+		outResults_parra.innerHTML += heartRate-10.0 + " - ";
+		outResults_parra.innerHTML += heartRate + "bpm</b><br/>";
+	}
+	</script>
+</head>
+<body>
+<h1>MAF Calculator</h1>
+Based on <a target="_blank" href="https://philmaffetone.com/180-formula/">MAF Heart Rate Calculator</a>.
+<b>This calculator only works in Chrome or Firefox (not in IE).</b><p/>
+<b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
+<h2>Enter Your Numbers</h2>
+<form Name="Options">
+    <div>
+        <label for="Age">age :</label>
+        <input type="text" id="age" name="user_age" value="58"> years
+    </div>
+	<div>
+	<b>a) Have or are you recovering from a major illness 
+	(heart disease, any operation or hospital stay, etc.) 
+	or are on any regular medication?</b><br/>
+		<input type="radio" name="OptionSelected1" value="ILL_NO" checked> Illness - No<br>
+		<input type="radio" name="OptionSelected1" value="ILL_YES"> Illness - Yes<br>
+    </div>
+	<div>
+	<b>b) Are you injured, have regressed in training or competition, 
+	get more than two colds or bouts of flu per year, have allergies or asthma, 
+	or if you have been inconsistent or are just getting back into training?</b><br/>
+		<input type="radio" name="OptionSelected2" value="INJ_NO" checked> Injured - No<br>
+		<input type="radio" name="OptionSelected2" value="INJ_YES"> Injured - Yes<br>
+    </div>
+	<div>
+	<b>c) Have you been training for more than two years without any of the problems in (a) and (b), 
+	and have made progress in competition without injury?</b><br/>
+		<input type="radio" name="OptionSelected3" value="TRAINED2_NO" checked> Trained 2 years - No<br>
+		<input type="radio" name="OptionSelected3" value="TRAINED2_YES"> Trained 2 years - Yes<br>
+    </div>
+<div class="button">
+  <input type="button" value="Calculate" onclick="write_results();"/>
+</div>
+</form>
+<i>Scroll down for results after pressing Calculate</i><p/>
+<hr/>
+<h2>MAF HR</h2>
+<p id="MAF_Results"></p>
+These are based on the <a target="_blank" href="https://philmaffetone.com/180-formula/">Maffetone heart rate numbers</a>.
+<h2>Disclaimer</h2>
+Use this information at your own risk and with the advice of your medical professional. 
+We are not doctors nor do we pretend to be one on the Internet.
+We do not take responsibility for errors in these calculations.
+We do not guarantee that these numbers will work for people at the extremes of the ranges.
+If you discover an error in calculation, please let us know through email: keto at land-boards dot com.
+</body>
+</html>
