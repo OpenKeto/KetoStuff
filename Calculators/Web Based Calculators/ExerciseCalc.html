@@ -61,6 +61,7 @@ button {
 		var outResults_parra = document.getElementById('MAF_Results');
 		var c2Results_parra = document.getElementById('C2_Results');
 		var calc220Results_parra = document.getElementById('Calc220_Results');
+		var NikoNikoResults_parra = document.getElementById('NikoNiko_Results');
 		var currentAge = parseFloat(document.getElementById('age').value);
 		var currentRHR = parseFloat(document.getElementById('rhr').value);
 		// Initialize variables selected by activity level on the form
@@ -150,6 +151,11 @@ button {
 		calc220Results_parra.innerHTML += " - ";
 		calc220Results_parra.innerHTML += (0.70 * hr220).toFixed(0);
 		calc220Results_parra.innerHTML += " bpm</b><br/>";
+		var nikoNikoNumber;
+		nikoNikoNumber = 138.0 - (currentAge/2.0);
+		NikoNikoResults_parra.innerHTML = "Niko Niko Heart Rate : <b>";
+		NikoNikoResults_parra.innerHTML += nikoNikoNumber.toFixed(0);
+		NikoNikoResults_parra.innerHTML += " bpm</b><br/>";
 	}
 	</script>
 </head>
@@ -202,6 +208,11 @@ Based on various calculators. I prefer the Maffetone method since it syncs up we
 These are based on the <a target="_blank" href="http://www.concept2.com/indoor-rowers/training/tips-and-general-info/training-heart-rate-range">Concept 2 Rower Training Heart Rate Range numbers</a>.
 <br/>Max HR based on (Inbar, O. Oten, A., Scheinowitz, M., Rotstein, A., Dlin, R. and Casaburi, R. Normal cardiopulmonary
 responses during incremental exercise in 20-70-yr-old men. Med Sci Sport Exerc 1994;26(5):538-546.)
+
+<h2>Niko Niko Heart Rate Calculations</h2>
+<p id="NikoNiko_Results"><br/></p>
+<br/>Based on <a target="_blank" href="http://lowcarbstudies.com/athletics/2018/07/14/niko-niko-pace/">Niko Niko Heart Rate numbers</a>.</o>
+
 <h2>220 Minus Age Heart Rate Calculations</h2>
 <p id="Calc220_Results"><br/></p>
 
