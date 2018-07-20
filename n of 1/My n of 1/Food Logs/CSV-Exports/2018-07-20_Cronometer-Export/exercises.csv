@@ -1,0 +1,342 @@
+Day,Exercise,Minutes,Calories Burned
+2017-10-25,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",10.0,-42.85
+2017-10-24,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-153.04
+2017-10-25,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-114.78
+2017-10-27,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-230.16
+2017-10-27,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",7.0,-30.07
+2017-10-28,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",24.0,-182.32
+2017-10-28,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-51.05
+2017-10-29,"General housework, light",60.0,-136.93
+2017-10-30,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-114.20
+2017-10-30,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-85.27
+2017-10-31,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",18.0,-137.08
+2017-10-31,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-51.18
+2017-11-1,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-90.80
+2017-11-1,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-50.85
+2017-11-3,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-90.11
+2017-11-3,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-50.46
+2017-11-4,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",25.0,-185.72
+2017-11-4,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",15.0,-62.40
+2017-11-6,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-89.67
+2017-11-6,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-125.53
+2017-11-7,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-224.54
+2017-11-7,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-50.30
+2017-11-8,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",22.0,-163.26
+2017-11-8,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-49.87
+2017-11-10,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",22.0,-162.19
+2017-11-10,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",10.0,-41.28
+2017-11-11,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",38.0,-279.44
+2017-11-11,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-49.42
+2017-11-12,"General housework, light",45.0,-98.65
+2017-11-13,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-89.84
+2017-11-13,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-83.85
+2017-11-14,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-110.44
+2017-11-14,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-49.48
+2017-11-15,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-144.75
+2017-11-15,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",10.0,-40.53
+2017-11-17,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-48.17
+2017-11-17,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",29.0,-207.89
+2017-11-18,"standing tasks, light effort (e.g., bartending, store clerk, assembling, filing, duplicating, librarian, putting up a Christmas tree, standing and talking at work, changing clothes when teaching physical education, standing)",90.0,-258.07
+2017-11-20,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-48.87
+2017-11-20,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",35.0,-254.55
+2017-11-21,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",18.0,-129.48
+2017-11-21,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.23
+2017-11-22,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-120.75
+2017-11-22,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-107.81
+2017-11-23,"General housework, light",30.0,-64.66
+2017-11-24,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.23
+2017-11-24,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",22.0,-158.26
+2017-11-24,"sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)",180.0,-129.49
+2017-11-25,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",14.0,-56.40
+2017-11-25,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",26.0,-187.03
+2017-11-25,"food shopping with or without a grocery cart, standing or walking",30.0,-56.33
+2017-11-26,"General housework, light",20.0,-43.87
+2017-11-26,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-49.18
+2017-11-26,"bowling",120.0,-351.32
+2017-11-27,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-49.50
+2017-11-27,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-110.50
+2017-11-28,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.76
+2017-11-28,"rope jumping, moderate pace, 100-120 skips/min, general, 2 foot skip, plain bounce",20.0,-315.94
+2017-11-29,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",6.0,-24.28
+2017-11-29,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-144.50
+2017-11-29,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-80.92
+2017-11-30,"rowing, stationary, general, moderate effort",8.0,-43.83
+2017-11-30,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-48.44
+2017-11-30,"rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce",10.0,-112.46
+2017-12-1,"CrossFit Warmup",10.0,-35.00
+2017-12-1,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-145.10
+2017-12-2,"CrossFit Warmup",10.0,-35.00
+2017-12-2,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",24.0,-174.16
+2017-12-4,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-145.31
+2017-12-4,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.55
+2017-12-4,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-81.37
+2017-12-5,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.70
+2017-12-5,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",25.0,-182.45
+2017-12-6,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-87.34
+2017-12-6,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",5.0,-20.38
+2017-12-6,"running",12.0,-122.28
+2017-12-7,"sitting, studying, general, including reading and/or writing, light effort",400.0,-173.64
+2017-12-8,"sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)",420.0,-303.11
+2017-12-8,"walking, 2.5 mph, level, firm surface",30.0,-86.60
+2017-12-8,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-121.25
+2017-12-8,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",5.0,-50.52
+2017-12-9,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",54.0,-390.76
+2017-12-10,"General housework, light",120.0,-256.94
+2017-12-11,"sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)",400.0,-286.82
+2017-12-11,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",8.0,-57.15
+2017-12-11,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",25.0,-100.02
+2017-12-11,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.01
+2017-12-12,"rope jumping, moderate pace, 100-120 skips/min, general, 2 foot skip, plain bounce",30.0,-463.69
+2017-12-13,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-121.68
+2017-12-14,"sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)",480.0,-350.06
+2017-12-15,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-320.19
+2017-12-16,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",24.0,-170.07
+2017-12-18,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-143.66
+2017-12-19,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",22.0,-158.02
+2017-12-20,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",55.0,-392.15
+2017-12-21,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",15.0,-59.62
+2017-12-22,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-119.24
+2017-12-23,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",35.0,-248.61
+2017-12-25,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",10.0,-99.51
+2017-12-26,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-120.38
+2017-12-27,"resistance (weight) training, squats , slow or explosive effort",24.0,-137.58
+2017-12-29,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-142.74
+2017-12-30,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",50.0,-354.01
+2018-1-1,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-85.19
+2018-1-1,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",16.0,-159.02
+2018-1-2,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",16.0,-113.58
+2018-1-2,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",6.0,-23.85
+2018-1-3,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-79.51
+2018-1-3,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-85.19
+2018-1-5,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-47.41
+2018-1-5,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",22.0,-86.91
+2018-1-15,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-214.99
+2018-1-16,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-141.98
+2018-1-16,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-31.80
+2018-1-19,"rope jumping, moderate pace, 100-120 skips/min, general, 2 foot skip, plain bounce",15.0,-229.84
+2018-1-19,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",2.0,-7.95
+2018-1-20,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",18.0,-127.69
+2018-1-20,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",15.0,-59.17
+2018-1-21,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",5.0,-35.19
+2018-1-22,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-32.09
+2018-1-22,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-107.46
+2018-1-23,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-47.30
+2018-1-23,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",10.0,-70.39
+2018-1-24,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-211.18
+2018-1-25,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-104.98
+2018-1-26,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-117.17
+2018-1-28,"running, 6 mph (10 min/mile)",10.0,-122.45
+2018-1-28,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",10.0,-69.57
+2018-1-29,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",8.0,-55.66
+2018-1-29,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-31.17
+2018-1-30,"rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce",20.0,-219.10
+2018-1-30,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-47.19
+2018-1-31,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-117.77
+2018-1-31,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-84.12
+2018-2-1,"Starting Strength",30.0,-100.00
+2018-2-2,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-315.77
+2018-2-3,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-210.51
+2018-2-4,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",10.0,-70.92
+2018-2-6,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-104.46
+2018-2-7,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",26.0,-101.40
+2018-2-9,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-211.22
+2018-2-10,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-210.94
+2018-2-12,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",15.0,-147.76
+2018-2-12,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-31.52
+2018-2-12,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-78.81
+2018-2-13,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",12.0,-47.28
+2018-2-13,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",20.0,-197.02
+2018-2-14,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",23.0,-158.97
+2018-2-15,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-103.88
+2018-2-16,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-207.35
+2018-2-17,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-212.31
+2018-2-18,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-83.41
+2018-2-18,"bicycling, stationary, general",60.0,-500.44
+2018-2-19,"running, 6 mph (10 min/mile)",15.0,-181.92
+2018-2-19,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-103.36
+2018-2-19,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",15.0,-57.88
+2018-2-19,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",9.0,-34.73
+2018-2-20,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-30.73
+2018-2-20,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",17.0,-116.62
+2018-2-21,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-137.27
+2018-2-21,"bicycling, stationary, RPM/Spin bike class",5.0,-51.48
+2018-2-23,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-137.51
+2018-2-23,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",10.0,-38.50
+2018-2-23,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-206.27
+2018-2-25,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-76.50
+2018-2-26,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",20.0,-77.22
+2018-2-26,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",12.0,-82.73
+2018-2-27,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-102.45
+2018-2-27,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",15.0,-57.37
+2018-2-28,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-115.64
+2018-3-1,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-205.56
+2018-3-2,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",16.0,-109.82
+2018-3-2,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-115.32
+2018-3-3,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-211.69
+2018-3-5,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",15.0,-104.24
+2018-3-6,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-115.22
+2018-3-7,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-136.54
+2018-3-7,"resistance (weight) training, squats , slow or explosive effort",10.0,-54.61
+2018-3-9,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",60.0,-234.10
+2018-3-11,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-208.10
+2018-3-12,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-211.76
+2018-3-12,"yoga, Hatha",30.0,-63.53
+2018-3-13,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",26.0,-179.67
+2018-3-16,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",15.0,-57.02
+2018-3-18,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",55.0,-373.31
+2018-3-19,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-202.55
+2018-3-19,"yoga, Surya Namaskar",23.0,-71.43
+2018-3-20,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",22.0,-148.53
+2018-3-20,"yoga, Hatha",30.0,-60.76
+2018-3-21,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",40.0,-270.06
+2018-3-22,"rowing, stationary ergometer, general, vigorous effort",9.0,-60.01
+2018-3-23,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",33.0,-221.72
+2018-3-23,"yoga, Hatha",30.0,-60.47
+2018-3-24,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",30.0,-285.29
+2018-3-25,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",38.0,-254.07
+2018-3-26,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-202.00
+2018-3-26,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",8.0,-30.17
+2018-3-27,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-202.00
+2018-3-27,"rowing, stationary ergometer, general, vigorous effort",3.0,-20.20
+2018-3-27,"yoga, Hatha",30.0,-60.60
+2018-3-29,"rowing, stationary, 150 watts, vigorous effort",3.0,-29.67
+2018-3-30,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-297.61
+2018-4-2,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-307.86
+2018-4-2,"yoga, Hatha",30.0,-61.57
+2018-4-3,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-205.24
+2018-4-4,"yoga, Hatha",30.0,-61.29
+2018-4-6,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",40.0,-268.36
+2018-4-7,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-300.03
+2018-4-9,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-203.64
+2018-4-9,"yoga, Hatha",30.0,-61.09
+2018-4-10,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",32.0,-304.51
+2018-4-11,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",55.0,-367.83
+2018-4-12,"yoga, Hatha",45.0,-90.19
+2018-4-13,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",40.0,-267.22
+2018-4-14,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",35.0,-237.10
+2018-4-16,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",32.0,-214.79
+2018-4-18,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",42.0,-278.37
+2018-4-20,"mowing lawn, walk, power mower, moderate or vigorous effort",48.0,-251.02
+2018-4-24,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-205.26
+2018-4-27,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-303.90
+2018-4-28,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",75.0,-282.64
+2018-4-30,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-201.70
+2018-5-1,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",38.0,-256.08
+2018-5-2,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-200.99
+2018-5-4,"Custom Exercise",30.0,-100.00
+2018-5-5,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-202.58
+2018-5-7,"bicycling, leisure, 9.4 mph",130.0,-828.09
+2018-5-8,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",35.0,-323.59
+2018-5-9,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",50.0,-329.03
+2018-5-10,"running, 6 mph (10 min/mile)",15.0,-175.98
+2018-5-11,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-204.50
+2018-5-12,"bicycling, leisure, 9.4 mph",220.0,-1419.57
+2018-5-13,"yard work, general, light effort",60.0,-162.41
+2018-5-14,"running, 6 mph (10 min/mile)",15.0,-175.56
+2018-5-16,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-110.58
+2018-5-16,"running, 6.7 mph (9 min/mile)",15.0,-187.59
+2018-5-17,"mowing lawn, walk, power mower, moderate or vigorous effort",30.0,-158.22
+2018-5-18,"rope jumping, moderate pace, 100-120 skips/min, general, 2 foot skip, plain bounce",35.0,-510.82
+2018-5-19,"running, 6 mph (10 min/mile)",35.0,-401.31
+2018-5-20,"walking for pleasure",30.0,-98.19
+2018-5-21,"running, 6 mph (10 min/mile)",27.0,-306.65
+2018-5-21,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",27.0,-246.12
+2018-5-22,"walking, 3.5 mph, level, brisk, firm surface, walking for exercise",24.0,-103.85
+2018-5-22,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",32.0,-209.79
+2018-5-23,"running, 6.7 mph (9 min/mile)",17.0,-213.34
+2018-5-24,"walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade",22.0,-126.90
+2018-5-25,"running, 6 mph (10 min/mile)",20.0,-233.73
+2018-5-26,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",30.0,-281.05
+2018-5-28,"running, 6 mph (10 min/mile)",22.0,-259.10
+2018-5-28,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",45.0,-301.12
+2018-5-29,"walking, 3.5 mph, level, brisk, firm surface, walking for exercise",22.0,-96.57
+2018-5-29,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-198.34
+2018-5-30,"running, 6.7 mph (9 min/mile)",15.0,-190.50
+2018-5-30,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-200.52
+2018-5-31,"walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade",20.0,-186.20
+2018-6-1,"rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce",25.0,-262.20
+2018-6-1,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",9.0,-33.88
+2018-6-1,"running, 6 mph (10 min/mile)",7.0,-82.83
+2018-6-4,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-197.89
+2018-6-5,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",40.0,-264.05
+2018-6-6,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-196.73
+2018-6-7,"walking, 3.5 mph, level, brisk, firm surface, walking for exercise",30.0,-129.84
+2018-6-8,"mowing lawn, walk, power mower, moderate or vigorous effort",50.0,-261.85
+2018-6-8,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",25.0,-229.12
+2018-6-9,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",40.0,-365.40
+2018-6-13,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",36.0,-243.66
+2018-6-18,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-198.33
+2018-6-18,"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort",16.0,-148.08
+2018-6-19,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",16.0,-105.25
+2018-6-19,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-110.52
+2018-6-20,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",20.0,-131.77
+2018-6-20,"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort",30.0,-110.69
+2018-6-22,"walking, 4.0 mph, level, firm surface, very brisk pace",43.0,-230.24
+2018-6-22,"resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort",30.0,-200.79
+2018-6-23,"walking, 4.0 mph, level, firm surface, very brisk pace",90.0,-481.90
+2018-6-24,"walking, 4.0 mph, level, firm surface, very brisk pace",90.0,-476.69
+2018-6-26,"walking, 4.0 mph, level, firm surface, very brisk pace",60.0,-321.27
+2018-6-27,"walking, 4.0 mph, level, firm surface, very brisk pace",60.0,-321.27
+2018-6-28,"mowing lawn, walk, power mower, moderate or vigorous effort",30.0,-159.84
+2018-6-30,"walking, 4.0 mph, level, firm surface, very brisk pace",100.0,-521.67
+2018-7-2,"walking, 4.0 mph, level, firm surface, very brisk pace",60.0,-312.50
+2018-7-2,"walking, 4.0 mph, level, firm surface, very brisk pace",60.0,-312.12
+2018-7-3,"walking, 4.0 mph, level, firm surface, very brisk pace",55.0,-290.22
+2018-7-5,"walking, 3.5 mph, level, brisk, firm surface, walking for exercise",62.0,-268.12
+2018-7-5,"bicycling, leisure, 9.4 mph",90.0,-566.12
+2018-7-6,"walking, 4.0 mph, level, firm surface, very brisk pace",61.0,-318.82
+2018-7-9,"walking, 4.0 mph, level, firm surface, very brisk pace",60.0,-318.66
+2018-7-12,"walking, 3.5 mph, level, brisk, firm surface, walking for exercise",60.0,-262.68
+2018-7-12,"walking, 3.5 mph, level, brisk, firm surface, walking for exercise",60.0,-262.68
+2018-7-13,"walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade",65.0,-375.00
+2018-7-13,"walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade",65.0,-610.46
+2018-7-19,"MAF 5K Walk (Watch) (Strava)",52.0,-396.00
+2018-7-19,"MAF walk (Polar HR Strap) (Strava)",52.0,-523.80
+2018-7-17,"MAF walk not quite 5K. (Strava)",51.0,-452.30
+2018-7-17,"Evening Walk (Strava)",52.0,-303.00
+2018-7-16,"MAF 1:02:54 row (Strava)",62.0,-498.00
+2018-7-15,"Afternoon Walk (Strava)",79.0,-478.00
+2018-7-15,"MAF walk 4 mi (Strava)",79.0,-716.80
+2018-7-15,"MAF 1 hour (Samsung) (Strava)",61.0,-429.00
+2018-7-15,"MAF walk 5k (Android) (Strava)",60.0,-580.40
+2018-7-14,"MAF walk 5 mi (Strava)",81.0,-790.40
+2018-7-14,"MAF Walk - 5 mi (Strava)",81.0,-550.00
+2018-7-8,"MAF walk (Strava)",69.0,-611.90
+2018-7-8,"MAF 4 Mile Walk/Run (Strava)",70.0,-610.00
+2018-7-8,"Lunch Walk (Strava)",17.0,-148.00
+2018-7-9,"MAF woodruff dry walk. (Strava)",68.0,-590.00
+2018-6-22,"5k Walk (Strava)",49.0,-472.80
+2018-6-24,"MAF 5 mile baseline (Strava)",84.0,-819.30
+2018-6-24,"MAF 5 mile baseline (Strava)",84.0,-837.30
+2018-6-26,"MAF Track 4 miles 1 hr (Strava)",60.0,-587.40
+2018-6-26,"MAF 1 hour (Strava)",63.0,-593.00
+2018-6-27,"1 Hour MAF - 4 miles (Watch) (Strava)",61.0,-620.80
+2018-6-27,"1 Hour MAF - 4 miles (Android) (Strava)",61.0,-622.90
+2018-6-28,"Mowing lawn (Strava)",49.0,-52.80
+2018-6-30,"Chef Joe omelette run (Walked) (Strava)",49.0,-491.30
+2018-6-30,"Chef Joe omelette run (walked) (Strava)",50.0,-490.90
+2018-6-30,"Warmup for Chef Joe Omelette Run 5K (Strava)",52.0,-465.30
+2018-6-30,"Warmup for Chef Joe Omelette Run 5K (Strava)",51.0,-469.60
+2018-7-2,"MAF 1 hr walk (Strava)",58.0,-521.40
+2018-7-2,"MAF 1 hr Walk (Strava)",58.0,-521.30
+2018-7-3,"MAF 1 hr Walk - Cut Short by Rain (Strava)",54.0,-488.50
+2018-7-2,"MAF - 1 hr stroll in the evening (Strava)",58.0,-462.90
+2018-7-5,"MAF bike Ride (Samsung) (Strava)",109.0,-571.00
+2018-7-5,"MAF Walk 1 hr (Strava)",62.0,-515.50
+2018-7-6,"MAF 1 hour (Samsung) (Strava)",60.0,-514.40
+2018-7-7,"5K Rowing MAF Baseline (Strava)",30.0,-250.00
+2018-7-7,"MAF 1 hour (Samsung) (Strava)",60.0,-549.50
+2018-7-7,"MAF walk 1 hour (Strava/Phone) (Strava)",61.0,-561.30
+2018-7-11,"5K Walk - Woodruff Race - Connellsville (Strava)",50.0,-477.20
+2018-7-11,"Woodruff 5k (Strava)",52.0,-484.30
+2018-7-11,"Evening Walk (Strava)",7.0,-62.00
+2018-7-11,"Walk to track (Strava)",8.0,-66.00
+2018-7-12,"MAF walk with stop and chat w neighbors. (Strava)",96.0,-581.70
+2018-7-12,"MAF Walk in the evening (Strava)",96.0,-569.70
+2018-7-12,"Afternoon Walk Hutchinson Park - 6 laps of ""inner"" loop (Strava)",61.0,-529.10
+2018-7-11,"Walk home from the Woodruff race. (Strava)",10.0,-48.90
+2018-7-13,"Lunch Walk (Strava)",71.0,-617.30
+2018-7-13,"MAF walk. (Strava)",71.0,-623.70
+2018-7-19,"Mowing lawn, walk, power mower",32.0,-192.26
+2018-7-20,"Morning Walk (Strava)",61.0,-276.00
+2018-7-20,"MAF walk (Strava)",61.0,-509.30
