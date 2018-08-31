@@ -62,6 +62,7 @@ button {
 		var c2Results_parra = document.getElementById('C2_Results');
 		var calc220Results_parra = document.getElementById('Calc220_Results');
 		var NikoNikoResults_parra = document.getElementById('NikoNiko_Results');
+		var RandLResults_parra = document.getElementById('RandL_Results');
 		var currentAge = parseFloat(document.getElementById('age').value);
 		var currentRHR = parseFloat(document.getElementById('rhr').value);
 		// Initialize variables selected by activity level on the form
@@ -151,6 +152,19 @@ button {
 		calc220Results_parra.innerHTML += " - ";
 		calc220Results_parra.innerHTML += (0.70 * hr220).toFixed(0);
 		calc220Results_parra.innerHTML += " bpm</b><br/>";
+		var rAndLNikoNumber;
+		rAndLNikoNumber = 205.8 - (0.685 * currentAge);
+		RandLResults_parra.innerHTML =  "Age: <b>";
+		RandLResults_parra.innerHTML += currentAge + "<br/>";
+		RandLResults_parra.innerHTML += "R&L Max Heart Rate : <b>";
+		RandLResults_parra.innerHTML += rAndLNikoNumber.toFixed(0);
+		RandLResults_parra.innerHTML += " bpm</b><br/>";
+		RandLResults_parra.innerHTML += "65% R&L Max Heart Rate : <b>";
+		RandLResults_parra.innerHTML += (rAndLNikoNumber * 0.65).toFixed(0);
+		RandLResults_parra.innerHTML += " bpm</b><br/>";
+		RandLResults_parra.innerHTML += "85% R&L Max Heart Rate : <b>";
+		RandLResults_parra.innerHTML += (rAndLNikoNumber * 0.85).toFixed(0);
+		RandLResults_parra.innerHTML += " bpm</b><br/>";
 		var nikoNikoNumber;
 		nikoNikoNumber = 138.0 - (currentAge/2.0);
 		NikoNikoResults_parra.innerHTML = "Niko Niko Heart Rate : <b>";
@@ -217,6 +231,10 @@ responses during incremental exercise in 20-70-yr-old men. Med Sci Sport Exerc 1
 <p id="Calc220_Results"><br/></p>
 
 Here is an interesting read <a target="_blank" href="https://www.asep.org/asep/asep/Robergs2.pdf">THE SURPRISING HISTORY OF THE “HRmax=220-age” EQUATION</a>.</p>
+
+<h2>Robergs & Landwehr Heart Rate Calculations</h2>
+<p id="RandL_Results"><br/></p>
+
 <h2>Disclaimer</h2>
 Use this information at your own risk and with the advice of your medical professional. 
 We are not doctors nor do we pretend to be one on the Internet.
