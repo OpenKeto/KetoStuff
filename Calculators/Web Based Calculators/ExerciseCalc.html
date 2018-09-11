@@ -63,6 +63,7 @@ button {
 		var calc220Results_parra = document.getElementById('Calc220_Results');
 		var NikoNikoResults_parra = document.getElementById('NikoNiko_Results');
 		var RandLResults_parra = document.getElementById('RandL_Results');
+		var FATmaxResults_parra = document.getElementById('FATmax_Results');
 		var currentAge = parseFloat(document.getElementById('age').value);
 		var currentRHR = parseFloat(document.getElementById('rhr').value);
 		// Initialize variables selected by activity level on the form
@@ -170,6 +171,11 @@ button {
 		NikoNikoResults_parra.innerHTML = "Niko Niko Heart Rate : <b>";
 		NikoNikoResults_parra.innerHTML += nikoNikoNumber.toFixed(0);
 		NikoNikoResults_parra.innerHTML += " bpm</b><br/>";
+		var FATmaxNumber;
+		FATmaxNumber = 0.74 * rAndLNikoNumber;
+		FATmaxResults_parra.innerHTML = "FATmax Heart Rate : <b>";
+		FATmaxResults_parra.innerHTML += FATmaxNumber.toFixed(0);
+		FATmaxResults_parra.innerHTML += " bpm</b><br/>";
 	}
 	</script>
 </head>
@@ -213,19 +219,17 @@ Based on various calculators. I prefer the Maffetone method since it syncs up we
 </form>
 <i>Scroll down for results after pressing Calculate</i><p>
 </p><hr>
-<h2>Maffetone (MAF) Heart Rate Calculations</h2>
+<h2>Maximum Aerobic Function (MAF) Heart Rate Calculations</h2>
 <p id="MAF_Results">
 <br/>
-<p>These are based on the <a target="_blank" href="https://philmaffetone.com/180-formula/">Maffetone 180-age Heart Rate numbers</a>.</p>
-<h2>Concept 2 Heart Rate Calculations</h2>
+<p>This heart rate range is based on the <a target="_blank" href="https://philmaffetone.com/180-formula/">Phil Maffetone 180-age Heart Rate numbers</a>.</p>
+<h2>Concept 2 Rower Heart Rate Calculations</h2>
 <p id="C2_Results"><br/></p>
-These are based on the <a target="_blank" href="http://www.concept2.com/indoor-rowers/training/tips-and-general-info/training-heart-rate-range">Concept 2 Rower Training Heart Rate Range numbers</a>.
-<br/>Max HR based on (Inbar, O. Oten, A., Scheinowitz, M., Rotstein, A., Dlin, R. and Casaburi, R. Normal cardiopulmonary
-responses during incremental exercise in 20-70-yr-old men. Med Sci Sport Exerc 1994;26(5):538-546.)
+These are based on the <a target="_blank" href="http://www.concept2.com/indoor-rowers/training/tips-and-general-info/training-heart-rate-range">Concept 2 Rower Training Heart Rate Range numbers</a>. Max HR based on (Inbar, O. Oten, A., Scheinowitz, M., Rotstein, A., Dlin, R. and Casaburi, R. <a href="https://www.ncbi.nlm.nih.gov/pubmed/8007799">Normal cardiopulmonary responses during incremental exercise in 20-70-yr-old men</a>. Med Sci Sport Exerc 1994;26(5):538-546.)
 
 <h2>Niko Niko Heart Rate Calculations</h2>
 <p id="NikoNiko_Results"><br/></p>
-<br/>Based on <a target="_blank" href="http://lowcarbstudies.com/athletics/2018/07/14/niko-niko-pace/">Niko Niko Heart Rate numbers</a>.</o>
+Based on <a target="_blank" href="http://lowcarbstudies.com/athletics/2018/07/14/niko-niko-pace/">Niko Niko Heart Rate numbers</a>.</o>
 
 <h2>220 Minus Age Heart Rate Calculations</h2>
 <p id="Calc220_Results"><br/></p>
@@ -235,13 +239,19 @@ Here is an interesting read <a target="_blank" href="https://www.asep.org/asep/a
 <h2>Robergs & Landwehr Heart Rate Calculations</h2>
 <p id="RandL_Results"><br/></p>
 
+<h2>FATmax Calculations</h2>
+<p id="FATmax_Results"><br/></p>
+
+This is based on the paper <a href="https://pdfs.semanticscholar.org/63a0/895c7f543b0a27422fd8ea3fc294e4afd475.pdf">Determination of the Exercise Intensity that Elicits Maximal Fat Oxidation</a>. The maximum heart rate was determined using the Robergs & Landwehr Heart Rate Calculations (above).
 <h2>Disclaimer</h2>
 Use this information at your own risk and with the advice of your medical professional. 
 We are not doctors nor do we pretend to be one on the Internet.
 We do not take responsibility for errors in these calculations.
 We do not guarantee that these numbers will work for people at the extremes of the ranges.
+If you start to exercise you could drop over dead - don't blame us if you die.
 If you discover an error in calculation, please let us know through email: keto at land-boards dot com.
 <br/>
-<p><b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.</p>
+<p><b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
+We are low carb and we don't do cookies of any sort.</p>
 
 </body></html>
