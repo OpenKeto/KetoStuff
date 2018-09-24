@@ -240,24 +240,31 @@ button {
 				outResults_parra.innerHTML += "Warning: You have selected a very low body fat percentage for your goal!<p/>"
 		}
 
-		// Maintenance Macros at Current Weight
-		var proteinGramsConstant = proteinNeed * currentLBMLbs;
-		var proteinCalsConstant = proteinGramsConstant * 4.0;
-		var fatCurrentCals = TDEE - proteinCalsConstant - 80;
-		maintMacrosCurrent_parra.innerHTML = "Protein: " + Math.round(proteinGramsConstant) + " grams, ";
+		// Maintenance Macros at Current Weight - based on Ted Naiman's macros
+		// 1g per lb of protein
+		var BFNSproteinGramsConstant = currentWeightLbs;
+		var proteinCalsConstant = BFNSproteinGramsConstant * 4.0;
+		var fatCurrentGrams = BFNSproteinGramsConstant - 30.0; 
+		var fatCurrentCals = fatCurrentGrams * 9.0;
+		var totalCals = proteinCalsConstant + fatCurrentCals + 120.0;
+		maintMacrosCurrent_parra.innerHTML = "Protein (minimum): " + Math.round(BFNSproteinGramsConstant) + " grams, ";
 		maintMacrosCurrent_parra.innerHTML += Math.round(proteinCalsConstant);
 		maintMacrosCurrent_parra.innerHTML += " calories, ";
 		maintMacrosCurrent_parra.innerHTML += (100 * proteinCalsConstant / TDEE).toFixed(1);
-		maintMacrosCurrent_parra.innerHTML += "% of calories (minimum)<br/>";
-		maintMacrosCurrent_parra.innerHTML += "Net Carbs: 20 grams, 80 calories, ";
-		maintMacrosCurrent_parra.innerHTML += (8000.00/TDEE).toFixed(1);
-		maintMacrosCurrent_parra.innerHTML += "% of calories (maximum)<br/>";
-		maintMacrosCurrent_parra.innerHTML += "Fat: " + Math.round(fatCurrentCals/9.0) + " grams, ";
+		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, ";
+		maintMacrosCurrent_parra.innerHTML += (12000.00/TDEE).toFixed(1);
+		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Fat (maximum): " + Math.round(fatCurrentGrams) + " grams, ";
 		maintMacrosCurrent_parra.innerHTML += Math.round(fatCurrentCals);
 		maintMacrosCurrent_parra.innerHTML += " calories, "
 		maintMacrosCurrent_parra.innerHTML += (100 * fatCurrentCals/TDEE).toFixed(1);
-		maintMacrosCurrent_parra.innerHTML += "% of calories (maximum, less if you exceed protein)<br/>";
+		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Total calories: ";
+		maintMacrosCurrent_parra.innerHTML += Math.round(totalCals);
+		maintMacrosCurrent_parra.innerHTML += " calories<br/>";
 		// Maintenance Macros at Goal Weight
+		var proteinGramsConstant = proteinNeed * currentLBMLbs;
 		var goalCals = currentCalsPerLbPerDay * goalWeight;
 		var goalFatCals = goalCals - 80.0 - proteinCalsConstant;
 		maintMacrosAtGoal_parra.innerHTML = "Goal Weight: <b>";
@@ -474,6 +481,9 @@ button {
 <p id="results"></p>
 <h2>Macro Levels to Maintain Current Weight</h2>
 <p id="MaintenanceCurrentMacros"></p>
+These maintenance macros are based on Ted Naiman's <a target="_blank" href="https://burnfatnotsugar.com/">Burn Fat Not Sugar</a> keto weight maintenance calculations. 
+If you want to gain weight, increase your grams of fat.
+If you want to lose weight, decrease your grams of fat.
 <h2>Numbers at Your Goal Body Fat Percentage</h2>
 <p id="MaintenanceAtGoalMacros"></p>
 <h2>Maximum Fat Loss Dietary Macros (per day)</h2>
