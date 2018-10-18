@@ -63,16 +63,12 @@ button {
 		var loseMacrosCurrent_parra = document.getElementById('DietaryMacrosLose');
 		var gainMacrosCurrent_parra = document.getElementById('DietaryMacrosGain');
 		var currentWeightLbs = parseFloat(document.getElementById('weight').value);
-		var goalBodyFatPercentage = parseFloat(document.getElementById('BodyFat').value);
 		var userAge = parseFloat(document.getElementById('age').value);
 		var heightInches = parseFloat(document.getElementById('height').value);
 		var neckInches = parseFloat(document.getElementById('neck').value);
 		var waistInches = parseFloat(document.getElementById('waist').value);
 		var hipsInches = parseFloat(document.getElementById('hips').value);
-//		var wristInches = parseFloat(document.getElementById('wrist').value);
-//		var ankleInches = parseFloat(document.getElementById('ankle').value);
 		// Units conversions
-		var goalBodyFatFractional = goalBodyFatPercentage / 100.0;
 		var startingWeightKG = currentWeightLbs/2.2;
 		var heightCM = heightInches * 2.54;
 		// Do the maths
@@ -129,7 +125,6 @@ button {
 			BMRSelected = bmrFemale;
 			currentBodyFatPercentCalculated = ((163.205*(Math.log10(hipsInches + waistInches - neckInches)))-(97.684*(Math.log10(heightInches)))-78.387);
 		}
-		// var currentCalsPerLbPerDay = TDEE / currentWeightLbs;
 		// Calculate the body fat in lbs, goal weight, and the lean body mass
 		var currentBodyFatLbs = (currentBodyFatPercentCalculated/100.0) * currentWeightLbs;
 		var currentLBMLbs = currentWeightLbs - currentBodyFatLbs;
@@ -140,101 +135,9 @@ button {
 		currentNumbers_parra.innerHTML += "%, ";
 		currentNumbers_parra.innerHTML += currentBodyFatLbs.toFixed(1);
 		currentNumbers_parra.innerHTML += " lbs<br/>";
-		var idealBodyFat = 0.0;
-		if ( document.KetoCalc.gender[0].checked )	// males
-		{
-			if (userAge <= 25.0)
-			{
-				idealBodyFat = 8.5;
-			}
-			else if (userAge <= 30.0)
-			{
-				idealBodyFat = 10.5;
-			}
-			else if (userAge <= 35.0)
-			{
-				idealBodyFat = 12.7;
-			}
-			else if (userAge <= 40.0)
-			{
-				idealBodyFat = 13.7;
-			}
-			else if (userAge <= 45.0)
-			{
-				idealBodyFat = 15.3;
-			}
-			else if (userAge <= 50.0)
-			{
-				idealBodyFat = 16.4;
-			}
-			else if (userAge <= 55.0)
-			{
-				idealBodyFat = 18.9;
-			}
-			else
-			{
-				idealBodyFat = 20.9;
-			}
-		}
-		else
-		{
-			if (userAge <= 25.0)
-			{
-				idealBodyFat = 17.7;
-			}
-			else if (userAge <= 30.0)
-			{
-				idealBodyFat = 18.4;
-			}
-			else if (userAge <= 35.0)
-			{
-				idealBodyFat = 19.3;
-			}
-			else if (userAge <= 40.0)
-			{
-				idealBodyFat = 21.5;
-			}
-			else if (userAge <= 45.0)
-			{
-				idealBodyFat = 22.2;
-			}
-			else if (userAge <= 50.0)
-			{
-				idealBodyFat = 22.9;
-			}
-			else if (userAge <= 55.0)
-			{
-				idealBodyFat = 25.2;
-			}
-			else
-			{
-				idealBodyFat = 26.3;
-			}
-		}
-		currentNumbers_parra.innerHTML += "Ideal Body Fat: " + idealBodyFat.toFixed(1) + "%. ";
-		if (currentBodyFatPercentCalculated < idealBodyFat)
-			currentNumbers_parra.innerHTML += "Your current body fat % is already lower than your ideal body fat %." + "<br/>";
-		else
-			currentNumbers_parra.innerHTML += "Your current body fat % is higher than your ideal body fat %.<br/>";
-		if (currentBodyFatPercentCalculated < goalBodyFatFractional * 100.0)
-			currentNumbers_parra.innerHTML += "Your body fat % is already lower than your goal body fat %.<br/>";
-		currentNumbers_parra.innerHTML += "Lean Body Mass (LBM): " + currentLBMLbs.toFixed(1) + " lbs, " + (currentLBMLbs/2.2).toFixed(1) + "kg<br/>";
-		currentNumbers_parra.innerHTML += "Basal Metabolic Rate (BMR): " + Math.round(BMRSelected) + " cal/day<br/>";
-		currentNumbers_parra.innerHTML += "Total Daily Energy Expenditure (TDEE): " + Math.round(TDEE) + " cal/day<br/>";
-		// Print a warning if the goal fat percentage is too low for healthy
-		if ( document.KetoCalc.gender[0].checked )	// males
-		{
-			if (goalBodyFatFractional < 0.05)
-				currentNumbers_parra.innerHTML += "Warning: You have selected a very low body fat % for your goal!<p/>";
-		}
-		else		// females
-		{
-			if (goalBodyFatFractional < 0.12)
-				currentNumbers_parra.innerHTML += "Warning: You have selected a very low body fat percentage for your goal!<p/>";
-		}
-
-		// Maintenance Macros at Current Weight - based on Ted Naiman's macros
-		// 1g per lb of protein
+		currentNumbers_parra.innerHTML += "Lean Body Mass (LBM): " + currentLBMLbs.toFixed(1) + " lbs, " + (currentLBMLbs/2.2).toFixed(1) + "kg.<br/>";
+		currentNumbers_parra.innerHTML += "Basal Metabolic Rate (BMR): " + Math.round(BMRSelected) + " cal/day.<br/>";
+		currentNumbers_parra.innerHTML += "Total Daily Energy Expenditure (TDEE): " + Math.round(TDEE) + " cal/day.<br/>";
 		var proteinGramsConstant = currentWeightLbs;
 		var proteinCalsConstant = proteinGramsConstant * 4.0;
 		var carbsGramsConstant = 30.0;
@@ -242,10 +145,10 @@ button {
 		var fatMaintainGrams = proteinGramsConstant - carbsGramsConstant; 
 		var fatMaintainCals = fatMaintainGrams * 9.0;
 		var totalCals = proteinCalsConstant + fatMaintainCals + carbsCalsConstant;
-		maintMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / totalCals).toFixed(1) + "% of calories<br/>";
-		maintMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (12000.00/totalCals).toFixed(1) + "% of calories<br/>";
-		maintMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatMaintainGrams.toFixed(1) + " grams, " + fatMaintainCals.toFixed(1) + " calories, " + (100.0 * fatMaintainCals/totalCals).toFixed(1) + "% of calories<br/>";
-		maintMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(totalCals) + " calories<br/>";
+		maintMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / totalCals).toFixed(1) + "% of calories.<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (12000.00/totalCals).toFixed(1) + "% of calories.<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatMaintainGrams.toFixed(1) + " grams, " + fatMaintainCals.toFixed(1) + " calories, " + (100.0 * fatMaintainCals/totalCals).toFixed(1) + "% of calories.<br/>";
+		maintMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(totalCals) + " calories.<br/>";
 		if (TDEE > totalCals)
 		{
 			maintMacrosCurrent_parra.innerHTML += "Your TDEE is more than your caloric intake by ";
@@ -269,21 +172,32 @@ button {
 		var fatGramsAvailable = fatCalsAvailable / 9.0;
 		var idealFatLoseGrams = (proteinGramsConstant/2.0) - carbsGramsConstant;
 		var fatLoseGrams = 0.0;
+		var fatLoseCals = 0.0;
+		// fatMaintainGrams are the grams of fat need to maintain current weight
 		if (idealFatLoseGrams < fatGramsAvailable)
 		{
 			fatLoseGrams = idealFatLoseGrams;
+			if (fatLoseGrams < 20.0)
+			{
+				fatLoseGrams = 20.0;
+			}
+			fatLoseCals = 9.0 * fatLoseGrams;
 		}
 		else
 		{
-			fatLoseGrams = fatGramsAvailable;
+			fatLoseCals = TDEE - carbsCalsConstant - proteinCalsConstant - fatCalsAvailable;
+			fatLoseGrams = fatLoseCals / 9.0;
 		}
-		var fatLoseCals = 9.0 * fatLoseGrams;
 		// determine minimum number of calories that can come from fat
 		var loseTotalCals = 0.0;
 		loseTotalCals = proteinCalsConstant + carbsCalsConstant + fatLoseCals;
-		loseMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / loseTotalCals).toFixed(1) + "% of calories<br/>";
-		loseMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (12000.00/loseTotalCals).toFixed(1) + "% of calories<br/>";
-		loseMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatLoseGrams.toFixed(1) + " grams, " + fatLoseCals.toFixed(1) + " calories, " + (100.0 * fatLoseCals/loseTotalCals).toFixed(1) + "% of calories";
+		loseMacrosCurrent_parra.innerHTML = "You have a maximum of ";
+		loseMacrosCurrent_parra.innerHTML += fatCalsAvailable.toFixed(1);
+		loseMacrosCurrent_parra.innerHTML += " calories of fat you can take from your body per day.<br/><br/>";
+		//
+		loseMacrosCurrent_parra.innerHTML += "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / loseTotalCals).toFixed(1) + "% of calories.<br/>";
+		loseMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (120.0 * 100.0/loseTotalCals).toFixed(1) + "% of calories.<br/>";
+		loseMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatLoseGrams.toFixed(1) + " grams, " + fatLoseCals.toFixed(1) + " calories, " + (100.0 * fatLoseCals/loseTotalCals).toFixed(1) + "% of calories.";
 		if (idealFatLoseGrams < fatGramsAvailable)
 		{
 			loseMacrosCurrent_parra.innerHTML += " - Not limited by your body's current fat mass.<br/>";
@@ -292,8 +206,7 @@ button {
 		{
 			loseMacrosCurrent_parra.innerHTML += " - Limited by your body's current fat mass.<br/>";
 		}
-		loseMacrosCurrent_parra.innerHTML += "You have this number of fat calories you can take from your body: " + fatLoseCals.toFixed(1) + "<br/>";
-		loseMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(loseTotalCals) + " calories<br/>";
+		loseMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(loseTotalCals) + " calories.<br/>";
 		if (TDEE > loseTotalCals)
 		{
 			loseMacrosCurrent_parra.innerHTML += "Your TDEE is more than your caloric intake by ";
@@ -317,10 +230,10 @@ button {
 		var fatGainCals = fatGainGrams * 9.0;
 		var gainTotalCals = 0.0;
 		gainTotalCals = proteinCalsConstant + fatGainCals + carbsCalsConstant;
-		gainMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / gainTotalCals).toFixed(1) + "% of calories<br/>";
-		gainMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (12000.00/gainTotalCals).toFixed(1) + "% of calories<br/>";
-		gainMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatGainGrams.toFixed(1) + " grams, " + fatGainCals.toFixed(1) + " calories, " + (100.0 * fatGainCals/gainTotalCals).toFixed(1) + "% of calories<br/>";
-		gainMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(gainTotalCals) + " calories<br/>";
+		gainMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / gainTotalCals).toFixed(1) + "% of calories.<br/>";
+		gainMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (12000.00/gainTotalCals).toFixed(1) + "% of calories.<br/>";
+		gainMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatGainGrams.toFixed(1) + " grams, " + fatGainCals.toFixed(1) + " calories, " + (100.0 * fatGainCals/gainTotalCals).toFixed(1) + "% of calories.<br/>";
+		gainMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(gainTotalCals) + " calories.<br/>";
 		if (TDEE > gainTotalCals)
 		{
 			gainMacrosCurrent_parra.innerHTML += "Your TDEE is more than your caloric intake by ";
@@ -388,11 +301,6 @@ button {
 		<input type="radio" name="actLevel" value="ModeratelyActive"> Moderately Active<br>
 		<input type="radio" name="actLevel" value="VeryActive"> Very Active<br>
 		<input type="radio" name="actLevel" value="ExtremelyActive"> Extremely Active
-    </div>
-	<h2>Enter Your <a target=\"_blank\" href="https://ketogains.com/2015/09/how-to-estimate-your-body-fat-percentage-bf/">Goal Body Fat</h2></a>
-    <div>
-        <label for="Body Fat">Goal Body Fat (%):</label>
-        <input type="text" id="BodyFat" name="user_bodyfat" value="12">
     </div>
 <div class="button">
   <input type="button" value="Calculate" onclick="write_results();"/>
