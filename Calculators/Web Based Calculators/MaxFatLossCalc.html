@@ -168,44 +168,55 @@ button {
 			maintMacrosCurrent_parra.innerHTML += " lbs per day.<br/>";
 		}
 		// Macros to Lose Weight
-		var fatCalsAvailable = 24.0 * currentBodyFatLbs;
-		var fatGramsAvailable = fatCalsAvailable / 9.0;
-		var idealFatLoseGrams = (proteinGramsConstant/2.0) - carbsGramsConstant;
-		var fatLoseGrams = 0.0;
+		// Fat calculation is complex
+		var fatCaloriesAvailableFromBodyFat = 24.0 * currentBodyFatLbs;
+		var fatGramsAvailableFromBodyFat = fatCaloriesAvailableFromBodyFat / 9.0;
+		loseMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories.<br/>";
+		loseMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories.<br/>";
+		var fatGramsNaimanCalculation = (proteinGramsConstant / 2.0) - carbsGramsConstant;
+		loseMacrosCurrent_parra.innerHTML += "You have a maximum of ";
+		loseMacrosCurrent_parra.innerHTML += fatGramsAvailableFromBodyFat.toFixed(1);
+		loseMacrosCurrent_parra.innerHTML += " grams of fat you can take from your body per day.<br/>";
+		var fatGramsFromTDEE = (TDEE - carbsCalsConstant - proteinCalsConstant) / 9.0;
+		loseMacrosCurrent_parra.innerHTML += "Maintaining your weight at your TDEE requires ";
+		loseMacrosCurrent_parra.innerHTML += fatGramsFromTDEE.toFixed(1);
+		loseMacrosCurrent_parra.innerHTML += " grams of fat.<br/>";
+		loseMacrosCurrent_parra.innerHTML += "Your P:2NPE number is ";
+		loseMacrosCurrent_parra.innerHTML += fatGramsNaimanCalculation.toFixed(1);
+		loseMacrosCurrent_parra.innerHTML += " grams of fat.<br/>";
+		var fatLoseGramsSelected = 0.0;
 		var fatLoseCals = 0.0;
-		// fatMaintainGrams are the grams of fat need to maintain current weight
-		if (idealFatLoseGrams < fatGramsAvailable)
+		if (fatGramsAvailableFromBodyFat < fatGramsNaimanCalculation)
 		{
-			fatLoseGrams = idealFatLoseGrams;
-			if (fatLoseGrams < 20.0)
+			if (fatGramsAvailableFromBodyFat < fatGramsFromTDEE)	// body fat is limiting number
 			{
-				fatLoseGrams = 20.0;
+				fatLoseGramsSelected = fatGramsFromTDEE - fatGramsAvailableFromBodyFat;
+				loseMacrosCurrent_parra.innerHTML += "Your body fat is limiting fat loss.<br/>";
 			}
-			fatLoseCals = 9.0 * fatLoseGrams;
+			else
+			{
+				fatLoseGramsSelected = fatGramsFromTDEE;
+				loseMacrosCurrent_parra.innerHTML += "Your TDEE is limiting fat loss.<br/>";
+			}
 		}
 		else
 		{
-			fatLoseCals = TDEE - carbsCalsConstant - proteinCalsConstant - fatCalsAvailable;
-			fatLoseGrams = fatLoseCals / 9.0;
+			if (fatGramsFromTDEE < fatGramsNaimanCalculation)
+			{
+				fatLoseGramsSelected = fatGramsFromTDEE;
+				loseMacrosCurrent_parra.innerHTML += "Your TDEE is limiting fat loss.<br/>";
+			}
+			else
+			{
+				fatLoseGramsSelected = fatGramsFromTDEE - fatGramsNaimanCalculation;
+				loseMacrosCurrent_parra.innerHTML += "Using Naiman numbers for fat loss.<br/>";
+			}
 		}
+		fatLoseCals = fatLoseGramsSelected * 9.0; 
 		// determine minimum number of calories that can come from fat
 		var loseTotalCals = 0.0;
 		loseTotalCals = proteinCalsConstant + carbsCalsConstant + fatLoseCals;
-		loseMacrosCurrent_parra.innerHTML = "You have a maximum of ";
-		loseMacrosCurrent_parra.innerHTML += fatCalsAvailable.toFixed(1);
-		loseMacrosCurrent_parra.innerHTML += " calories of fat you can take from your body per day.<br/><br/>";
-		//
-		loseMacrosCurrent_parra.innerHTML += "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant / loseTotalCals).toFixed(1) + "% of calories.<br/>";
-		loseMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (120.0 * 100.0/loseTotalCals).toFixed(1) + "% of calories.<br/>";
-		loseMacrosCurrent_parra.innerHTML += "Fat (maximum): " + fatLoseGrams.toFixed(1) + " grams, " + fatLoseCals.toFixed(1) + " calories, " + (100.0 * fatLoseCals/loseTotalCals).toFixed(1) + "% of calories.";
-		if (idealFatLoseGrams < fatGramsAvailable)
-		{
-			loseMacrosCurrent_parra.innerHTML += " - Not limited by your body's current fat mass.<br/>";
-		}
-		else
-		{
-			loseMacrosCurrent_parra.innerHTML += " - Limited by your body's current fat mass.<br/>";
-		}
+		loseMacrosCurrent_parra.innerHTML += "Fat target: " + fatLoseGramsSelected.toFixed(1) + " grams, " + fatLoseCals.toFixed(1) + " calories, " + (100.0 * fatLoseCals/loseTotalCals).toFixed(1) + "% of calories.";
 		loseMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(loseTotalCals) + " calories.<br/>";
 		if (TDEE > loseTotalCals)
 		{
