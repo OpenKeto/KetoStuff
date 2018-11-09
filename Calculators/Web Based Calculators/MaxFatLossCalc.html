@@ -171,52 +171,51 @@ button {
 		// Fat calculation is complex
 		var fatCaloriesAvailableFromBodyFat = 24.0 * currentBodyFatLbs;
 		var fatGramsAvailableFromBodyFat = fatCaloriesAvailableFromBodyFat / 9.0;
-		loseMacrosCurrent_parra.innerHTML = "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories.<br/>";
-		loseMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories.<br/>";
 		var fatGramsNaimanCalculation = (proteinGramsConstant / 2.0) - carbsGramsConstant;
+		var fatGramsFromTDEE = (TDEE - carbsCalsConstant - proteinCalsConstant) / 9.0;
+		var fatLoseGramsSelected = 0.0;
+		var fatLoseCals = 0.0;
+		if ((fatGramsAvailableFromBodyFat < fatGramsNaimanCalculation) && (fatGramsAvailableFromBodyFat < fatGramsFromTDEE))
+		{
+			fatLoseGramsSelected = fatGramsFromTDEE - fatGramsAvailableFromBodyFat;
+			loseMacrosCurrent_parra.innerHTML = "Your body fat is limiting fat loss. Your fat macro is your fat from TDEE minus body fat (1).<br/>";
+			}
+		else if ((fatGramsAvailableFromBodyFat < fatGramsNaimanCalculation) && (fatGramsAvailableFromBodyFat > fatGramsFromTDEE) && (fatGramsAvailableFromBodyFat < fatGramsNaimanCalculation))
+		{
+			fatLoseGramsSelected = fatGramsFromTDEE;
+				loseMacrosCurrent_parra.innerHTML = "Your TDEE is limiting fat loss.<br/>";
+		}
+		else if (fatGramsFromTDEE < fatGramsNaimanCalculation)
+		{
+			fatLoseGramsSelected = fatGramsFromTDEE;
+			loseMacrosCurrent_parra.innerHTML = "Your TDEE is limiting fat loss.<br/>";
+		}
+		else if (fatGramsAvailableFromBodyFat > fatGramsFromTDEE - fatGramsNaimanCalculation)
+		{
+			fatLoseGramsSelected = fatGramsNaimanCalculation;
+			loseMacrosCurrent_parra.innerHTML = "Your body has more fat available than the Naiman P=2xNPE number. Using Naiman number for fat loss.<br/>";
+		}
+		else
+		{
+			fatLoseGramsSelected = fatGramsFromTDEE - fatGramsAvailableFromBodyFat;
+			loseMacrosCurrent_parra.innerHTML = "Your body fat is limiting fat loss. Your fat macro is your fat from TDEE minus body fat (2).<br/>";
+		}
+		fatLoseCals = fatLoseGramsSelected * 9.0; 
+		var loseTotalCals = 0.0;
+		loseTotalCals = proteinCalsConstant + carbsCalsConstant + fatLoseCals;
 		loseMacrosCurrent_parra.innerHTML += "You have a maximum of ";
 		loseMacrosCurrent_parra.innerHTML += fatGramsAvailableFromBodyFat.toFixed(1);
-		loseMacrosCurrent_parra.innerHTML += " grams of fat you can take from your body per day.<br/>";
-		var fatGramsFromTDEE = (TDEE - carbsCalsConstant - proteinCalsConstant) / 9.0;
+		loseMacrosCurrent_parra.innerHTML += " grams of fat (" + (9.0*fatGramsAvailableFromBodyFat).toFixed(1) +  " calories) you can take from your body fat per day.<br/>";
 		loseMacrosCurrent_parra.innerHTML += "Maintaining your weight at your TDEE requires ";
 		loseMacrosCurrent_parra.innerHTML += fatGramsFromTDEE.toFixed(1);
 		loseMacrosCurrent_parra.innerHTML += " grams of fat.<br/>";
 		loseMacrosCurrent_parra.innerHTML += "Your P:2NPE number is ";
 		loseMacrosCurrent_parra.innerHTML += fatGramsNaimanCalculation.toFixed(1);
 		loseMacrosCurrent_parra.innerHTML += " grams of fat.<br/>";
-		var fatLoseGramsSelected = 0.0;
-		var fatLoseCals = 0.0;
-		if (fatGramsAvailableFromBodyFat < fatGramsNaimanCalculation)
-		{
-			if (fatGramsAvailableFromBodyFat < fatGramsFromTDEE)	// body fat is limiting number
-			{
-				fatLoseGramsSelected = fatGramsFromTDEE - fatGramsAvailableFromBodyFat;
-				loseMacrosCurrent_parra.innerHTML += "Your body fat is limiting fat loss.<br/>";
-			}
-			else
-			{
-				fatLoseGramsSelected = fatGramsFromTDEE;
-				loseMacrosCurrent_parra.innerHTML += "Your TDEE is limiting fat loss.<br/>";
-			}
-		}
-		else
-		{
-			if (fatGramsFromTDEE < fatGramsNaimanCalculation)
-			{
-				fatLoseGramsSelected = fatGramsFromTDEE;
-				loseMacrosCurrent_parra.innerHTML += "Your TDEE is limiting fat loss.<br/>";
-			}
-			else
-			{
-				fatLoseGramsSelected = fatGramsFromTDEE - fatGramsNaimanCalculation;
-				loseMacrosCurrent_parra.innerHTML += "Using Naiman numbers for fat loss.<br/>";
-			}
-		}
-		fatLoseCals = fatLoseGramsSelected * 9.0; 
+		loseMacrosCurrent_parra.innerHTML += "Protein (minimum): " + proteinGramsConstant.toFixed(1) + " grams, " + proteinCalsConstant.toFixed(1) + " calories, " + (100.0 * proteinCalsConstant/loseTotalCals).toFixed(1) + "% of calories.<br/>";
+		loseMacrosCurrent_parra.innerHTML += "Net Carbs (maximum): 30 grams, 120 calories, " + (100.0 * 120.0/loseTotalCals).toFixed(1) + "% of calories.<br/>";
 		// determine minimum number of calories that can come from fat
-		var loseTotalCals = 0.0;
-		loseTotalCals = proteinCalsConstant + carbsCalsConstant + fatLoseCals;
-		loseMacrosCurrent_parra.innerHTML += "Fat target: " + fatLoseGramsSelected.toFixed(1) + " grams, " + fatLoseCals.toFixed(1) + " calories, " + (100.0 * fatLoseCals/loseTotalCals).toFixed(1) + "% of calories.";
+		loseMacrosCurrent_parra.innerHTML += "Fat target: " + fatLoseGramsSelected.toFixed(1) + " grams, " + fatLoseCals.toFixed(1) + " calories, " + (100.0 * fatLoseCals/loseTotalCals).toFixed(1) + "% of calories.<br/>";
 		loseMacrosCurrent_parra.innerHTML += "Total calories: " + Math.round(loseTotalCals) + " calories.<br/>";
 		if (TDEE > loseTotalCals)
 		{
@@ -225,7 +224,7 @@ button {
 			loseMacrosCurrent_parra.innerHTML += " calories.<br/>";
 			loseMacrosCurrent_parra.innerHTML += "This will lead to a loss of ";
 			loseMacrosCurrent_parra.innerHTML += ((TDEE - loseTotalCals)/3500.0).toFixed(2);
-			loseMacrosCurrent_parra.innerHTML += " lbs per day.<br/>";
+			loseMacrosCurrent_parra.innerHTML += " lbs per day, or " + (30.9*(TDEE - loseTotalCals)/3500.0).toFixed(1) + " lbs per month.<br/>";
 		}
 		else if (TDEE < loseTotalCals)
 		{
@@ -328,9 +327,9 @@ button {
 </ul>
 <h3>Maintenance Macro Levels (NPE=PE)</h3>
 <p id="DietaryMacrosMaintain"></p>
-<h3>Macro Levels to Lose Body Weight (NPE = 1/2 PE)</h3>
+<h3>Macro Levels to Lose Body Weight (PE = 2NPE)</h3>
 <p id="DietaryMacrosLose"></p>
-<h3>Macro Levels to Gain Body Weight (NPE = 2X PE)</h3>
+<h3>Macro Levels to Gain Body Weight (NPE = 2PE)</h3>
 <p id="DietaryMacrosGain"></p>
 <h2>Notes</h2>
 This diet preserves the most lean body mass possible and provides satiety.
