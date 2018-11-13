@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+<style>
+form {
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 20px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+</style>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	// Set up the paragraphs for the calculated results
+	function write_results()
+	{
+		// Grab the elements that the user filled into variables
+		var currentNumbers_parra = document.getElementById('results');
+		var currentProtein = parseFloat(document.getElementById('Protein').value);
+		var currentCarbohydrates = parseFloat(document.getElementById('Carbohydrates').value);
+		var currentFat = parseFloat(document.getElementById('Fat').value);
+		var currentAlcohol = parseFloat(document.getElementById('Alcohol').value);
+		proteinCals = 4.0 * currentProtein;
+		carbCals = 4.0 * currentCarbohydrates;
+		fatCals = 9.0 * currentFat;
+		alcoholCals = 7.0 * currentAlcohol;
+		var foodQuality = (((0.207 * carbCals) + (0.159 * fatCals) + (0.193 * proteinCals) + (0.137 * alcoholCals))/((0.207 * carbCals) + (0.226 * fatCals) + (0.243 * proteinCals) + (0.206 * alcoholCals)));
+		currentNumbers_parra.innerHTML = "Protein : " + currentProtein + " grams.<br/>";
+		currentNumbers_parra.innerHTML += "Net Carbs : " + currentCarbohydrates + " grams.<br/>";
+		currentNumbers_parra.innerHTML += "Fat : " + currentFat + " grams.<br/>";
+		currentNumbers_parra.innerHTML += "Food Quotient: " + foodQuality.toFixed(3) + ".<br/>";
+	}
+	</script>
+</head>
+<body>
+<h1>Food Quotient Calculator</h1>
+<b>This calculator only works in Chrome or Firefox (not in IE).</b><p/>
+<b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
+<h2>Enter Your Numbers</h2>
+<form Name="FoodQuotientCalc">
+    <div>
+        <label for="Carbohydrates">Carbohydrates:</label>
+        <input type="text" id="Carbohydrates" name="user_Carbohydrates" value="35.0" autofocus> grams
+    </div>
+	<div>
+        <label for="Fat">Fat :</label>
+        <input type="text" id="Fat" name="user_Fat" value="136.0"> grams
+    </div>
+    <div>
+        <label for="Protein">Protein :</label>
+        <input type="text" id="Protein" name="user_Protein" value="162.0"> grams
+    </div>
+    <div>
+        <label for="Alcohol">Protein :</label>
+        <input type="text" id="Alcohol" name="user_Alcohol" value="0.0"> grams
+    </div>
+<div class="button">
+  <input type="button" value="Calculate" onclick="write_results();"/>
+</div>
+</form>
+<i>Scroll down for results after pressing Calculate</i><p/>
+<hr/>
+<h2>Food Quality</h2>
+<p id="results"></p>
+<h2>Disclaimer</h2>
+Use this information at your own risk and with the advice of your medical professional. 
+We are not doctors nor do we pretend to be one on the Internet.
+We do not take responsibility for errors in these calculations.
+We do not guarantee that these numbers will work for people at the extremes of the ranges.
+If you discover an error in calculation, please let us know through email: keto at land-boards dot com.
+</body>
+</html>
