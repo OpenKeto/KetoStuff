@@ -64,15 +64,33 @@ button {
 		var currentCarbohydrates = parseFloat(document.getElementById('Carbohydrates').value);
 		var currentFat = parseFloat(document.getElementById('Fat').value);
 		var currentAlcohol = parseFloat(document.getElementById('Alcohol').value);
-		proteinCals = 4.0 * currentProtein;
-		carbCals = 4.0 * currentCarbohydrates;
-		fatCals = 9.0 * currentFat;
-		alcoholCals = 7.0 * currentAlcohol;
-		var foodQuality = (((0.207 * carbCals) + (0.159 * fatCals) + (0.193 * proteinCals) + (0.137 * alcoholCals))/((0.207 * carbCals) + (0.226 * fatCals) + (0.243 * proteinCals) + (0.206 * alcoholCals)));
-		currentNumbers_parra.innerHTML = "Protein : " + currentProtein + " grams.<br/>";
-		currentNumbers_parra.innerHTML += "Net Carbs : " + currentCarbohydrates + " grams.<br/>";
-		currentNumbers_parra.innerHTML += "Fat : " + currentFat + " grams.<br/>";
-		currentNumbers_parra.innerHTML += "Food Quotient: " + foodQuality.toFixed(3) + ".<br/>";
+		var proteinCals = 4.0 * currentProtein;
+		var carbCals = 4.0 * currentCarbohydrates;
+		var fatCals = 9.0 * currentFat;
+		var alcoholCals = 7.0 * currentAlcohol;
+		var totalCals = proteinCals + carbCals + fatCals + alcoholCals;
+		var foodQuotient = (((0.207 * carbCals) + (0.159 * fatCals) + (0.193 * proteinCals) + (0.137 * alcoholCals))/((0.207 * carbCals) + (0.226 * fatCals) + (0.243 * proteinCals) + (0.206 * alcoholCals)));
+		currentNumbers_parra.innerHTML = "Protein : " + currentProtein + " grams, " + ((100.0 * proteinCals) / totalCals).toFixed(1) + "% of calories.<br/>";
+		currentNumbers_parra.innerHTML += "Net Carbs : " + currentCarbohydrates + " grams, " + ((100.0 * carbCals) / totalCals).toFixed(1) + "% of calories.<br/>";
+		currentNumbers_parra.innerHTML += "Fat : " + currentFat + " grams, " + ((100.0 * fatCals) / totalCals).toFixed(1) + "% of calories.<br/><br/>";
+		currentNumbers_parra.innerHTML += "Food Quotient: " + foodQuotient.toFixed(3) + ".<br/>";
+		if (foodQuotient > 1.0)
+		{
+			currentNumbers_parra.innerHTML += "An FQ > 1.0 indicates carbs being stored as fats via DNL.";
+		}
+		else if (foodQuotient < 0.7)
+		{
+			currentNumbers_parra.innerHTML += "An FQ < 0.7 indicates gluconeogenesis is happening.";
+		}
+		else
+		{
+			var fatPercentage = 0.0;
+			var carbPercentage = 0.0;
+			carbPercentage = (foodQuotient - 0.7) * 33.33;
+			fatPercentage = 100.0 - carbPercentage;
+			currentNumbers_parra.innerHTML += "Fat oxidized = " + fatPercentage.toFixed(1) + "%<br/>";
+			currentNumbers_parra.innerHTML += "Carb oxidized = " + carbPercentage.toFixed(1) + "%<br/>";
+		}
 	}
 	</script>
 </head>
