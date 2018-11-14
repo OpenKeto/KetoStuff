@@ -72,13 +72,24 @@ button {
 		var foodQuotient = (((0.207 * carbCals) + (0.159 * fatCals) + (0.193 * proteinCals) + (0.137 * alcoholCals))/((0.207 * carbCals) + (0.226 * fatCals) + (0.243 * proteinCals) + (0.206 * alcoholCals)));
 		currentNumbers_parra.innerHTML = "Protein : " + currentProtein + " grams, " + ((100.0 * proteinCals) / totalCals).toFixed(1) + "% of calories.<br/>";
 		currentNumbers_parra.innerHTML += "Net Carbs : " + currentCarbohydrates + " grams, " + ((100.0 * carbCals) / totalCals).toFixed(1) + "% of calories.<br/>";
-		currentNumbers_parra.innerHTML += "Fat : " + currentFat + " grams, " + ((100.0 * fatCals) / totalCals).toFixed(1) + "% of calories.<br/><br/>";
+		currentNumbers_parra.innerHTML += "Fat : " + currentFat + " grams, " + ((100.0 * fatCals) / totalCals).toFixed(1) + "% of calories.<br/>";
+		currentNumbers_parra.innerHTML += "Calories : " + totalCals.toFixed(1) + " calories per day.<br/>";
+		currentNumbers_parra.innerHTML += "Calories : " + (totalCals/24.0).toFixed(1) + " calories per hour.<br/>";
+		currentNumbers_parra.innerHTML += "Calories : " + (totalCals/(24.0*60.0)).toFixed(1) + " calories per minute.<br/><br/>";
 		currentNumbers_parra.innerHTML += "Food Quotient: " + foodQuotient.toFixed(3) + ".<br/>";
-		if (foodQuotient > 1.0)
+		if (foodQuotient == 1.000)
+		{
+			currentNumbers_parra.innerHTML += "An FQ of 1.0 indicates your 100% of your energy comes carbs being oxidized.";
+		}
+		else if (foodQuotient > 1.000)
 		{
 			currentNumbers_parra.innerHTML += "An FQ > 1.0 indicates carbs being stored as fats via DNL.";
 		}
-		else if (foodQuotient < 0.7)
+		else if (foodQuotient.toFixed(3) == 0.704)
+		{
+			currentNumbers_parra.innerHTML += "An FQ of 0.704 indicates 100% of your energy comes fats being oxidized.";
+		}
+		else if (foodQuotient < 0.700)
 		{
 			currentNumbers_parra.innerHTML += "An FQ < 0.7 indicates gluconeogenesis is happening.";
 		}
@@ -86,9 +97,9 @@ button {
 		{
 			var fatPercentage = 0.0;
 			var carbPercentage = 0.0;
-			carbPercentage = (foodQuotient - 0.7) * 33.33;
+			carbPercentage = 100.0 * ((foodQuotient - 0.7) / 0.3);
 			fatPercentage = 100.0 - carbPercentage;
-			currentNumbers_parra.innerHTML += "This diet burns a mixture of fat and carbohydrates<br/>";
+			currentNumbers_parra.innerHTML += "This diet (at rest) burns a mixture of fat and carbohydrates<br/>";
 			currentNumbers_parra.innerHTML += "Fat oxidized = " + fatPercentage.toFixed(1) + "%<br/>";
 			currentNumbers_parra.innerHTML += "Carb oxidized = " + carbPercentage.toFixed(1) + "%<br/>";
 		}
@@ -97,8 +108,6 @@ button {
 </head>
 <body>
 <h1>Food Quotient Calculator</h1>
-<b>This calculator only works in Chrome or Firefox (not in IE).</b><p/>
-<b>Privacy Information</b>: This calculator runs locally on your computer. None of your personal data is stored on our server.
 <h2>Enter Your Numbers</h2>
 <form Name="FoodQuotientCalc">
     <div>
@@ -131,15 +140,26 @@ button {
 <li>RQ of 0.8 = Protein being oxidized</li>
 <li>RQ of 0.85 = Equal amount of fat and carbohydrates being oxidized</li>
 <li>RQ of 1.0 = Carbohydrates being oxidized</li>
+<li>The respiratory quotient (RQ) is closer to the food quotient (FQ) for subjects eating high-fat diets than it is for subjects eating high-carbohydrate diets.</li>
 </ul>
 <h2>References</h2>
 <li>Wikipedia - <a href="https://en.wikipedia.org/wiki/Respiratory_quotient" target="_blank" rel="noopener">Respiratory quotient</a><br/>
 <li>Hyperlipid - <a href="http://high-fat-nutrition.blogspot.com/2016/05/on-stephen-phinney-and-rq-of-062.html" target="_blank" rel="noopener">On Stephen Phinney and an RQ of 0.62</a>
+<li><a href="http://lowcarbstudies.com/blog/2018/05/06/food-quotient-of-various-diets/" target="_blank" rel="noopener">Food quotient</a> - Explains how RQ can be less than 0.7 or greater than 1.0.<br/>
+<h2>Standard American Diet (2000 calories)</h2>
+<li>Carbohydrates = 250 g
+<li>Fat = 78 g
+<li>Protein = 75 g
+<br/>
+<h2>Privacy Information</h2>
+This calculator runs locally on your computer. 
+None of your personal data is stored on our server.
+Other people can probably see what you enter into your browser if they try hard enough.
 <h2>Disclaimer</h2>
 Use this information at your own risk and with the advice of your medical professional. 
 We are not doctors nor do we pretend to be one on the Internet.
 We do not take responsibility for errors in these calculations.
 We do not guarantee that these numbers will work for people at the extremes of the ranges.
-If you discover an error in calculation, please let us know through email: keto at land-boards dot com.
+If you discover an error in calculation, please let us know through email: blog at lowcarbstudies dot com.
 </body>
 </html>
