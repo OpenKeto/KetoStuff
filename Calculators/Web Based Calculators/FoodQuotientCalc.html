@@ -88,6 +88,7 @@ button {
 			var carbPercentage = 0.0;
 			carbPercentage = (foodQuotient - 0.7) * 33.33;
 			fatPercentage = 100.0 - carbPercentage;
+			currentNumbers_parra.innerHTML += "This diet burns a mixture of fat and carbohydrates<br/>";
 			currentNumbers_parra.innerHTML += "Fat oxidized = " + fatPercentage.toFixed(1) + "%<br/>";
 			currentNumbers_parra.innerHTML += "Carb oxidized = " + carbPercentage.toFixed(1) + "%<br/>";
 		}
@@ -122,15 +123,18 @@ button {
 </form>
 <i>Scroll down for results after pressing Calculate</i><p/>
 <hr/>
-<h2>Food Quotient</h2>
+<h2>Food Quotient Results</h2>
 <p id="results"></p>
-<a href="https://en.wikipedia.org/wiki/Respiratory_quotient" target="_blank" rel="noopener">Respiratory quotient</a><br/>
+<h2>RQ Values</h2>
 <ul>
 <li>RQ of 0.7 = Fat being oxidized</li>
 <li>RQ of 0.8 = Protein being oxidized</li>
 <li>RQ of 0.85 = Equal amount of fat and carbohydrates being oxidized</li>
 <li>RQ of 1.0 = Carbohydrates being oxidized</li>
 </ul>
+<h2>References</h2>
+<li>Wikipedia - <a href="https://en.wikipedia.org/wiki/Respiratory_quotient" target="_blank" rel="noopener">Respiratory quotient</a><br/>
+<li>Hyperlipid - <a href="http://high-fat-nutrition.blogspot.com/2016/05/on-stephen-phinney-and-rq-of-062.html" target="_blank" rel="noopener">On Stephen Phinney and an RQ of 0.62</a>
 <h2>Disclaimer</h2>
 Use this information at your own risk and with the advice of your medical professional. 
 We are not doctors nor do we pretend to be one on the Internet.
