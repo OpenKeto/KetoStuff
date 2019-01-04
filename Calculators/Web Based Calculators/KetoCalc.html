@@ -54,7 +54,6 @@ button {
 </style>
 <meta charset="utf-8">
 <script type="text/javascript">
-
 	function write_results(){
 		// Set up the paragraphs for the calculated results
 		var outResults_parra = document.getElementById('results');
@@ -232,12 +231,12 @@ button {
 		if ( document.KetoCalc.gender[0].checked )	// males
 		{
 			if (goalBodyFatPct < 0.05)
-				outResults_parra.innerHTML += "Warning: You have selected a very low body fat % for your goal!<p/>"
+				outResults_parra.innerHTML += "Warning: You have selected a very low body fat % for your goal!<p/>";
 		}
 		else		// females
 		{
 			if (goalBodyFatPct < 0.12)
-				outResults_parra.innerHTML += "Warning: You have selected a very low body fat percentage for your goal!<p/>"
+				outResults_parra.innerHTML += "Warning: You have selected a very low body fat percentage for your goal!<p/>";
 		}
 
 		// Maintenance Macros at Current Weight - based on Ted Naiman's macros
@@ -257,7 +256,7 @@ button {
 		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
 		maintMacrosCurrent_parra.innerHTML += "Fat (maximum): " + Math.round(fatCurrentGrams) + " grams, ";
 		maintMacrosCurrent_parra.innerHTML += Math.round(fatCurrentCals);
-		maintMacrosCurrent_parra.innerHTML += " calories, "
+		maintMacrosCurrent_parra.innerHTML += " calories, ";
 		maintMacrosCurrent_parra.innerHTML += (100 * fatCurrentCals/TDEE).toFixed(1);
 		maintMacrosCurrent_parra.innerHTML += "% of calories<br/>";
 		maintMacrosCurrent_parra.innerHTML += "Total calories: ";
@@ -274,7 +273,7 @@ button {
 		maintMacrosAtGoal_parra.innerHTML += " lbs<br/>";
 		maintMacrosAtGoal_parra.innerHTML += "You will need to consume (TDEE): ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(goalCals);
-		maintMacrosAtGoal_parra.innerHTML += " calories<br/>"
+		maintMacrosAtGoal_parra.innerHTML += " calories<br/>";
 		maintMacrosAtGoal_parra.innerHTML += "Protein: ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(proteinGramsConstant) + " grams, ";
 		maintMacrosAtGoal_parra.innerHTML += Math.round(100.0 * proteinCalsConstant / goalCals);
@@ -292,18 +291,19 @@ button {
 		var netFatCals = TDEE - proteinCalsConstant - maxFatMobilizationCals - 80.0;
 		if (netFatCals < 0)	// Don't allow this number to go below 0
 			netFatCals = 0;
-		var PsmfDietaryCals = proteinCalsConstant+netFatCals+80.0;
+		var proteinCalsPSMF = 4*proteinGramsConstant;
+		var PsmfDietaryCals = proteinCalsPSMF+netFatCals+80.0;
 		// Form the string for macros
 		PsmfMacros_parra.innerHTML = "Your total calories from food should be ";
 		PsmfMacros_parra.innerHTML += Math.round(PsmfDietaryCals);
 		PsmfMacros_parra.innerHTML += " calories per day for maximum fat loss.<br/>";
 		PsmfMacros_parra.innerHTML += "Protein: " + proteinGramsConstant.toFixed(1);
-		PsmfMacros_parra.innerHTML += " g (" + proteinCalsConstant.toFixed(1);
+		PsmfMacros_parra.innerHTML += " g (" + proteinCalsPSMF.toFixed(1);
 		PsmfMacros_parra.innerHTML += " cals), " + (proteinCalsConstant*100/PsmfDietaryCals).toFixed(1);
 		PsmfMacros_parra.innerHTML += "% of calories<br/>";
 		PsmfMacros_parra.innerHTML += "It is best to eat several meals of 35-40 grams of protein per meal to maximize Muscle Protein Synthesis.<br/>";
 		PsmfMacros_parra.innerHTML += "Carbs: 20 g (80 cals), " + (8000/PsmfDietaryCals).toFixed(1);
-		PsmfMacros_parra.innerHTML += "% of calories (from leafy green vegetables)<br/>"
+		PsmfMacros_parra.innerHTML += "% of calories (from leafy green vegetables)<br/>";
 		PsmfMacros_parra.innerHTML += "Fat: " +(netFatCals/9.0).toFixed(1);
 		PsmfMacros_parra.innerHTML += " g (";
 		PsmfMacros_parra.innerHTML += Math.round(netFatCals);
@@ -342,12 +342,12 @@ button {
 			fasting_parra.innerHTML += " calories per day. ";
 			if (fastingCaloriesAvailableFromFat > TDEE*0.9)
 			{
-				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food puts you in the range for fasting.<br>"
+				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food puts you in the range for fasting.<br>";
 			}
 			else
 			{
-				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food still leaves you in a caloric deficit during fasting.<p/>"
-				fasting_parra.innerHTML += "This maximum fat loss method may be a better approach to fat loss since it solves the calorie deficit by providing the calories needed for the deficit from body fat.<br>"
+				fasting_parra.innerHTML += "Calculating in a 10% Thermic Effect of food still leaves you in a caloric deficit during fasting.<p/>";
+				fasting_parra.innerHTML += "This maximum fat loss method may be a better approach to fat loss since it solves the calorie deficit by providing the calories needed for the deficit from body fat.<br>";
 			}
 		}
 		// Gainz
